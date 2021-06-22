@@ -520,9 +520,9 @@ F 3 "" H 6850 1800 50  0001 C CNN
 $EndComp
 NoConn ~ 7450 4600
 Text GLabel 4500 6950 2    50   BiDi ~ 0
-SDA_MIO13
+SDA_MIO11
 Text GLabel 4500 7050 2    50   BiDi ~ 0
-SCLK_MIO12
+SCLK_MIO10
 $Comp
 L power:+3V3 #PWR?
 U 1 1 5C439273

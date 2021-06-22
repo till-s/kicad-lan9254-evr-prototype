@@ -1190,10 +1190,6 @@ Text GLabel 3600 5400 2    50   Output ~ 0
 UART_TX_MIO15
 Text GLabel 1300 5700 0    50   Input ~ 0
 UART_RX_MIO14
-Text GLabel 3600 6000 2    50   BiDi ~ 0
-SDA_MIO13
-Text GLabel 3600 6100 2    50   BiDi ~ 0
-SCLK_MIO12
 Text GLabel 6800 1800 2    50   Input ~ 0
 MGT_RX1_N
 Text GLabel 6800 1900 2    50   Input ~ 0
@@ -1383,12 +1379,6 @@ Text Label 3600 5500 2    50   ~ 0
 MIO_0
 Text Label 3600 5700 2    50   ~ 0
 MIO9
-Text Label 3600 5800 2    50   ~ 0
-MIO11
-Text Label 3600 5900 2    50   ~ 0
-MIO10
-NoConn ~ 3600 5800
-NoConn ~ 3600 5900
 NoConn ~ 1300 6000
 NoConn ~ 1300 6100
 $Comp
@@ -1441,6 +1431,14 @@ Text GLabel 3600 5500 2    50   Input ~ 0
 MIO_0
 Text GLabel 3600 5700 2    50   Input ~ 0
 MIO_9
-Text Notes 3850 5850 0    50   ~ 0
-!!! WRONG - IIC-1 is used by SOM; use MIO10/11 !!!
+Text Label 3600 6000 2    50   ~ 0
+MIO13
+Text Label 3600 6100 2    50   ~ 0
+MIO12
+Text GLabel 3600 5900 2    50   BiDi ~ 0
+SCLK_MIO10
+Text GLabel 3600 5800 2    50   BiDi ~ 0
+SDA_MIO11
+NoConn ~ 3600 6000
+NoConn ~ 3600 6100
 $EndSCHEMATC
