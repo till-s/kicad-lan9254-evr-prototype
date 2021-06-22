@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name conn-sfp)(type KiCad)(uri /home/till/kicad/agilack/contrib-kicad_parts/conn-sfp)(options "")(descr ""))
+)

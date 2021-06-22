@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name trigbox)(type Legacy)(uri /home/till/kicad/libs/trigbox.lib)(options "")(descr ""))
+  (lib (name te0715)(type Legacy)(uri /home/till/kicad/libs/te0715.lib)(options "")(descr ""))
+  (lib (name cpu-carrier-test-rescue)(type Legacy)(uri ${KIPRJMOD}/cpu-carrier-test-rescue.lib)(options "")(descr ""))
+)
