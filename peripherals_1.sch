@@ -849,101 +849,20 @@ Wire Wire Line
 Connection ~ 2350 7150
 Wire Wire Line
 	2350 7150 2800 7150
-$Comp
-L Connector_Generic:Conn_02x06_Top_Bottom J?
-U 1 1 5C567449
-P 3350 4500
-AR Path="/5CEAC2F1/5C567449" Ref="J?"  Part="1" 
-AR Path="/5C1147CA/5C567449" Ref="J98"  Part="1" 
-F 0 "J98" H 3400 4917 50  0000 C CNN
-F 1 "Conn_02x06_Top_Bottom" H 3400 4826 50  0000 C CNN
-F 2 "pmod:PinSocket_2x06_P2.54mm_Horizontal" H 3350 4500 50  0001 C CNN
-F 3 "~" H 3350 4500 50  0001 C CNN
-	1    3350 4500
-	-1   0    0    -1  
-$EndComp
-Text GLabel 3550 4300 2    50   BiDi ~ 0
+Text GLabel 4150 3950 2    50   BiDi ~ 0
 SD0_D1_MIO43
-Text GLabel 3550 4400 2    50   BiDi ~ 0
+Text GLabel 4150 4050 2    50   BiDi ~ 0
 SD0_D0_MIO42
-Text GLabel 3550 4500 2    50   BiDi ~ 0
+Text GLabel 4150 4250 2    50   BiDi ~ 0
 SD0_CMD_MIO41
-Text GLabel 3550 4600 2    50   Input ~ 0
+Text GLabel 4150 4150 2    50   Input ~ 0
 SD0_CLK_MIO40
-$Comp
-L power:+3V3 #PWR?
-U 1 1 5C572575
-P 4400 4800
-AR Path="/5BE73D36/5C572575" Ref="#PWR?"  Part="1" 
-AR Path="/5C1147CA/5C572575" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4400 4650 50  0001 C CNN
-F 1 "+3V3" H 4415 4973 50  0000 C CNN
-F 2 "" H 4400 4800 50  0001 C CNN
-F 3 "" H 4400 4800 50  0001 C CNN
-	1    4400 4800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3550 4800 4400 4800
-$Comp
-L power:GND #PWR?
-U 1 1 5C588E1C
-P 3600 4900
-F 0 "#PWR?" H 3600 4650 50  0001 C CNN
-F 1 "GND" H 3605 4727 50  0000 C CNN
-F 2 "" H 3600 4900 50  0001 C CNN
-F 3 "" H 3600 4900 50  0001 C CNN
-	1    3600 4900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3550 4700 3600 4700
-Wire Wire Line
-	3600 4700 3600 4900
-$Comp
-L power:GND #PWR?
-U 1 1 5C59445C
-P 2950 4900
-F 0 "#PWR?" H 2950 4650 50  0001 C CNN
-F 1 "GND" H 2955 4727 50  0000 C CNN
-F 2 "" H 2950 4900 50  0001 C CNN
-F 3 "" H 2950 4900 50  0001 C CNN
-	1    2950 4900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3050 4700 2950 4700
-Wire Wire Line
-	2950 4700 2950 4900
-$Comp
-L power:+1V8 #PWR?
-U 1 1 5C59FEC7
-P 2200 4800
-AR Path="/5C0C1285/5C59FEC7" Ref="#PWR?"  Part="1" 
-AR Path="/5C114F28/5C114F49/5C59FEC7" Ref="#PWR?"  Part="1" 
-AR Path="/5BE73D36/5C59FEC7" Ref="#PWR?"  Part="1" 
-AR Path="/5C1147CA/5C59FEC7" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 2200 4650 50  0001 C CNN
-F 1 "+1V8" H 2215 4973 50  0000 C CNN
-F 2 "" H 2200 4800 50  0001 C CNN
-F 3 "" H 2200 4800 50  0001 C CNN
-	1    2200 4800
-	1    0    0    -1  
-$EndComp
-Text GLabel 2250 3700 2    50   Output ~ 0
+Text GLabel 4150 2900 2    50   Output ~ 0
 MIO_0
-Text GLabel 3050 4400 0    50   Output ~ 0
-MIO_9
-Text GLabel 3050 4500 0    50   BiDi ~ 0
+Text GLabel 4150 3850 2    50   BiDi ~ 0
 SD0_D2_MIO44
-Text GLabel 3050 4600 0    50   BiDi ~ 0
+Text GLabel 4150 3750 2    50   BiDi ~ 0
 SD0_D3_MIO45
-Wire Wire Line
-	2200 4800 3050 4800
-NoConn ~ 3050 4300
-Text GLabel 2850 2100 0    50   Output ~ 0
-PGOOD
-NoConn ~ 2850 2100
 $Comp
 L fmc:74AC125 U8
 U 1 1 5C2FAE19
@@ -996,7 +915,6 @@ Text GLabel 5400 2600 0    50   Input ~ 0
 TCK_I
 Wire Wire Line
 	5400 2600 5950 2600
-NoConn ~ 2250 3700
 $Comp
 L fmc:100nF_603 C1
 U 1 1 5C5E9AE6
@@ -1049,4 +967,282 @@ $EndComp
 Wire Wire Line
 	4400 6450 5200 6450
 Connection ~ 4400 6450
+$Comp
+L Logic_LevelTranslator:TXS0108EPW U1
+U 1 1 60D50EAB
+P 3500 4150
+F 0 "U1" H 3500 4950 50  0000 C CNN
+F 1 "TXS0108EPW" H 3500 5100 50  0000 C CNN
+F 2 "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm" H 3500 3400 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/txs0108e.pdf" H 3500 4050 50  0001 C CNN
+F 4 "TXS0108EPWR " H 3500 4150 50  0001 C CNN "Part"
+F 5 "Texas Instruments" H 3500 4150 50  0001 C CNN "Manufacturer"
+	1    3500 4150
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D50EB1
+P 3600 3200
+F 0 "#PWR?" H 3600 2950 50  0001 C CNN
+F 1 "GND" H 3605 3027 50  0000 C CNN
+F 2 "" H 3600 3200 50  0001 C CNN
+F 3 "" H 3600 3200 50  0001 C CNN
+	1    3600 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 3750 4150 3750
+Wire Wire Line
+	3900 3850 4150 3850
+Wire Wire Line
+	3900 3950 4150 3950
+Wire Wire Line
+	3900 4050 4150 4050
+Wire Wire Line
+	3900 4150 4150 4150
+Wire Wire Line
+	3900 4250 4150 4250
+Wire Wire Line
+	3600 3200 3500 3200
+Wire Wire Line
+	3500 3200 3500 3300
+$Comp
+L power:+1V8 #PWR?
+U 1 1 60D50EC5
+P 4400 4850
+AR Path="/5C0C1285/60D50EC5" Ref="#PWR?"  Part="1" 
+AR Path="/5C114F28/5C114F49/60D50EC5" Ref="#PWR?"  Part="1" 
+AR Path="/5BE73D36/60D50EC5" Ref="#PWR?"  Part="1" 
+AR Path="/5C1147CA/60D50EC5" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4400 4700 50  0001 C CNN
+F 1 "+1V8" H 4415 5023 50  0000 C CNN
+F 2 "" H 4400 4850 50  0001 C CNN
+F 3 "" H 4400 4850 50  0001 C CNN
+	1    4400 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 60D50ECB
+P 2700 4850
+AR Path="/5BE73D36/60D50ECB" Ref="#PWR?"  Part="1" 
+AR Path="/5C1147CA/60D50ECB" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2700 4700 50  0001 C CNN
+F 1 "+3V3" H 2715 5023 50  0000 C CNN
+F 2 "" H 2700 4850 50  0001 C CNN
+F 3 "" H 2700 4850 50  0001 C CNN
+	1    2700 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L fmc:100nF_603 C5
+U 1 1 60D50ED3
+P 4550 5000
+F 0 "C5" H 4665 5046 50  0000 L CNN
+F 1 "100nF_603" H 4665 4955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 4588 4850 50  0001 C CNN
+F 3 "~" H 4550 5000 50  0001 C CNN
+F 4 "GCJ188R71E104KA12D" H 4675 5200 50  0001 C CNN "Part"
+F 5 "Murata" H 4775 5300 50  0001 C CNN "Manufacturer"
+	1    4550 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60D50ED9
+P 4550 5150
+F 0 "#PWR?" H 4550 4900 50  0001 C CNN
+F 1 "GND" H 4555 4977 50  0000 C CNN
+F 2 "" H 4550 5150 50  0001 C CNN
+F 3 "" H 4550 5150 50  0001 C CNN
+	1    4550 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 4850 4550 4850
+Connection ~ 4400 4850
+$Comp
+L fmc:100nF_603 C3
+U 1 1 60D50EE3
+P 2700 5000
+F 0 "C3" H 2500 5100 50  0000 L CNN
+F 1 "100nF_603" H 2150 4950 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2738 4850 50  0001 C CNN
+F 3 "~" H 2700 5000 50  0001 C CNN
+F 4 "GCJ188R71E104KA12D" H 2825 5200 50  0001 C CNN "Part"
+F 5 "Murata" H 2925 5300 50  0001 C CNN "Manufacturer"
+	1    2700 5000
+	1    0    0    -1  
+$EndComp
+Connection ~ 2700 4850
+$Comp
+L power:GND #PWR?
+U 1 1 60D50EEA
+P 2700 5150
+F 0 "#PWR?" H 2700 4900 50  0001 C CNN
+F 1 "GND" H 2705 4977 50  0000 C CNN
+F 2 "" H 2700 5150 50  0001 C CNN
+F 3 "" H 2700 5150 50  0001 C CNN
+	1    2700 5150
+	1    0    0    -1  
+$EndComp
+Text GLabel 4450 4550 2    50   Output ~ 0
+PGOOD
+Wire Wire Line
+	3100 3750 2800 3750
+Wire Wire Line
+	2800 3750 2800 3950
+Wire Wire Line
+	2800 3950 2500 3950
+Wire Wire Line
+	3100 3850 2900 3850
+Wire Wire Line
+	2900 3850 2900 4050
+Wire Wire Line
+	2900 4050 2500 4050
+Wire Wire Line
+	3100 3950 3000 3950
+Wire Wire Line
+	3000 3950 3000 3350
+Wire Wire Line
+	3000 3350 2500 3350
+Wire Wire Line
+	3100 4050 2950 4050
+Wire Wire Line
+	2950 4050 2950 3450
+Wire Wire Line
+	2950 3450 2500 3450
+Wire Wire Line
+	2500 3850 2750 3850
+Wire Wire Line
+	2500 3650 2650 3650
+Wire Wire Line
+	2500 3550 3100 3550
+Wire Wire Line
+	3100 3550 3100 3200
+Wire Wire Line
+	3100 3200 3500 3200
+Connection ~ 3500 3200
+$Comp
+L power:+3V3 #PWR?
+U 1 1 60D50F07
+P 2600 3100
+AR Path="/5BE73D36/60D50F07" Ref="#PWR?"  Part="1" 
+AR Path="/5C1147CA/60D50F07" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2600 2950 50  0001 C CNN
+F 1 "+3V3" H 2615 3273 50  0000 C CNN
+F 2 "" H 2600 3100 50  0001 C CNN
+F 3 "" H 2600 3100 50  0001 C CNN
+	1    2600 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 3750 2600 3750
+Text GLabel 4150 2700 2    50   Output ~ 0
+MIO_9
+Wire Wire Line
+	2500 3250 2500 3300
+Wire Wire Line
+	2500 3300 3500 3300
+Connection ~ 3500 3300
+Wire Wire Line
+	3500 3300 3500 3450
+$Comp
+L Device:Jumper_NO_Small JP1
+U 1 1 60D50F23
+P 3750 2900
+F 0 "JP1" H 3750 2800 50  0000 C CNN
+F 1 "Jumper_NO_Small" H 3750 2994 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 3750 2900 50  0001 C CNN
+F 3 "~" H 3750 2900 50  0001 C CNN
+F 4 " 61300211121 " H 3750 2900 50  0001 C CNN "Part"
+F 5 "Wurth" H 3750 2900 50  0001 C CNN "Manufacturer"
+	1    3750 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 2900 4150 2900
+Wire Wire Line
+	3650 2900 3600 2900
+Wire Wire Line
+	3600 2900 3600 3200
+Connection ~ 3600 3200
+Text Notes 3650 3150 0    50   ~ 0
+Write-protect
+NoConn ~ 4450 4550
+Text Notes 5500 4550 2    50   ~ 0
+PGOOD is 3v3 but OE is\nreferenced to VCCA
+NoConn ~ 3900 4350
+NoConn ~ 3900 4450
+Wire Wire Line
+	2700 4850 3400 4850
+NoConn ~ 3100 4350
+NoConn ~ 3100 4450
+Wire Wire Line
+	3600 4850 4150 4850
+Wire Wire Line
+	4150 4550 4150 4850
+Connection ~ 4150 4850
+Wire Wire Line
+	4150 4850 4400 4850
+Wire Wire Line
+	3900 4550 4150 4550
+Wire Wire Line
+	2500 3150 2500 2700
+Wire Wire Line
+	2500 2700 4150 2700
+Wire Wire Line
+	2600 3200 2600 3100
+Wire Wire Line
+	2600 3750 2600 3200
+Connection ~ 2600 3200
+Wire Wire Line
+	2800 3200 2600 3200
+Connection ~ 3100 3200
+$Comp
+L fmc:10uF_1210 C4
+U 1 1 60D50F11
+P 2950 3200
+F 0 "C4" V 2698 3200 50  0000 C CNN
+F 1 "10uF_1210" V 2789 3200 50  0000 C CNN
+F 2 "Capacitor_SMD:C_1210_3225Metric" H 2988 3050 50  0001 C CNN
+F 3 "~" H 2950 3200 50  0001 C CNN
+F 4 "GRJ32ER71E106KE11L" H 3075 3400 50  0001 C CNN "Part"
+F 5 "Murata" H 3175 3500 50  0001 C CNN "Manufacturer"
+	1    2950 3200
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:Micro_SD_Card_Det J1
+U 1 1 60DBBFD1
+P 1600 3650
+F 0 "J1" H 1550 2833 50  0000 C CNN
+F 1 "Micro_SD_Card_Det" H 1550 2924 50  0000 C CNN
+F 2 "Connector_Card:microSD_HC_Hirose_DM3D-SF" H 3650 4350 50  0001 C CNN
+F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 1600 3750 50  0001 C CNN
+	1    1600 3650
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60DBE51F
+P 650 3150
+F 0 "#PWR?" H 650 2900 50  0001 C CNN
+F 1 "GND" H 655 2977 50  0000 C CNN
+F 2 "" H 650 3150 50  0001 C CNN
+F 3 "" H 650 3150 50  0001 C CNN
+	1    650  3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	650  3150 800  3150
+Wire Wire Line
+	2750 4250 3100 4250
+Wire Wire Line
+	2750 3850 2750 4250
+Wire Wire Line
+	2650 3650 2650 4150
+Wire Wire Line
+	2650 4150 3100 4150
 $EndSCHEMATC
