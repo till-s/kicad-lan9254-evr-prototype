@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title ""
 Date ""
 Rev ""
@@ -117,12 +117,6 @@ Wire Wire Line
 	1550 6550 1650 6550
 Wire Wire Line
 	1550 6650 1650 6650
-$Sheet
-S 4300 1150 1100 1450
-U 5CEAC2F1
-F0 "Power Supply" 50
-F1 "power-and-uart.sch" 50
-$EndSheet
 Text GLabel 8050 4900 0    50   Output ~ 0
 B13_L3_N
 Text GLabel 8050 4750 0    50   Output ~ 0
@@ -698,4 +692,20 @@ NoConn ~ 2750 6550
 NoConn ~ 2750 5500
 NoConn ~ 2750 5400
 NoConn ~ 2750 5300
+Text GLabel 4400 1500 0    50   Input ~ 0
+UART_TX_MIO15
+Text GLabel 6050 1500 2    50   Output ~ 0
+UART_RX_MIO14
+$Sheet
+S 4600 1100 1150 750 
+U 60DAA393
+F0 "power-and-uart" 50
+F1 "power-and-uart/power-test-module.sch" 50
+F2 "UART_TX_OUT" O R 5750 1500 50 
+F3 "UART_RX_IN" I L 4600 1500 50 
+$EndSheet
+Wire Wire Line
+	6050 1500 5750 1500
+Wire Wire Line
+	4600 1500 4400 1500
 $EndSCHEMATC
