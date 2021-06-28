@@ -1219,7 +1219,7 @@ U 1 1 60DBBFD1
 P 1600 3650
 F 0 "J1" H 1550 2833 50  0000 C CNN
 F 1 "Micro_SD_Card_Det" H 1550 2924 50  0000 C CNN
-F 2 "Connector_Card:microSD_HC_Hirose_DM3D-SF" H 3650 4350 50  0001 C CNN
+F 2 "proj_footprints:microSD_HC_Hirose_DM3D-SF_smaller_crtyd" H 3650 4350 50  0001 C CNN
 F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 1600 3750 50  0001 C CNN
 	1    1600 3650
 	-1   0    0    1   
