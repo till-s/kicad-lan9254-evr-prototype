@@ -553,20 +553,6 @@ Wire Wire Line
 	3400 3250 3850 3250
 Connection ~ 3400 3250
 $Comp
-L power:+5V #PWR?
-U 1 1 5C525614
-P 3950 1550
-AR Path="/5C1147CA/5C525614" Ref="#PWR?"  Part="1" 
-AR Path="/5CEAC2F1/5C525614" Ref="#PWR?"  Part="1" 
-AR Path="/5C525614" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 3950 1400 50  0001 C CNN
-F 1 "+5V" H 3965 1723 50  0000 C CNN
-F 2 "" H 3950 1550 50  0001 C CNN
-F 3 "" H 3950 1550 50  0001 C CNN
-	1    3950 1550
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:Jumper_NO_Small JP?
 U 1 1 5C52562C
 P 2300 3700
@@ -653,35 +639,19 @@ NoConn ~ 2750 6550
 NoConn ~ 2750 5500
 NoConn ~ 2750 5400
 NoConn ~ 2750 5300
-Text GLabel 4400 1250 0    50   Input ~ 0
-UART_TX_MIO15
-Text GLabel 6050 1250 2    50   Output ~ 0
-UART_RX_MIO14
-$Sheet
-S 4600 1100 1150 750 
-U 60DAA393
-F0 "power-and-uart" 50
-F1 "power-and-uart/power-test-module.sch" 50
-F2 "UART_TX_OUT" O R 5750 1250 50 
-F3 "UART_RX_IN" I L 4600 1250 50 
-F4 "3V3_PWR_OUT" O L 4600 1750 50 
-F5 "5V_PWR_OUT" O L 4600 1550 50 
-$EndSheet
 Wire Wire Line
-	4600 1250 4400 1250
-$Comp
-L trigbox:VIN #PWR?
-U 1 1 60DB0332
-P 4300 2550
-AR Path="/5CEAC2F1/60DB0332" Ref="#PWR?"  Part="1" 
-AR Path="/60DB0332" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4300 2400 50  0001 C CNN
-F 1 "VIN" H 4315 2723 50  0000 C CNN
-F 2 "" H 4300 2550 50  0001 C CNN
-F 3 "" H 4300 2550 50  0001 C CNN
-	1    4300 2550
-	1    0    0    -1  
-$EndComp
+	4450 2550 4600 2550
+Wire Wire Line
+	4450 1750 4450 2550
+Wire Wire Line
+	4600 1750 4450 1750
+Wire Wire Line
+	3950 1550 4600 1550
+Wire Wire Line
+	5750 1250 6050 1250
+Connection ~ 4450 2550
+Wire Wire Line
+	4300 2550 4450 2550
 $Comp
 L trigbox:VIN_3V3 #PWR?
 U 1 1 60DD3A54
@@ -695,17 +665,47 @@ F 3 "" H 4600 2550 50  0001 C CNN
 	1    4600 2550
 	1    0    0    -1  
 $EndComp
+$Comp
+L trigbox:VIN #PWR?
+U 1 1 60DB0332
+P 4300 2550
+AR Path="/5CEAC2F1/60DB0332" Ref="#PWR?"  Part="1" 
+AR Path="/60DB0332" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4300 2400 50  0001 C CNN
+F 1 "VIN" H 4315 2723 50  0000 C CNN
+F 2 "" H 4300 2550 50  0001 C CNN
+F 3 "" H 4300 2550 50  0001 C CNN
+	1    4300 2550
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	4300 2550 4450 2550
-Wire Wire Line
-	5750 1250 6050 1250
-Wire Wire Line
-	3950 1550 4600 1550
-Wire Wire Line
-	4600 1750 4450 1750
-Wire Wire Line
-	4450 1750 4450 2550
-Connection ~ 4450 2550
-Wire Wire Line
-	4450 2550 4600 2550
+	4600 1250 4400 1250
+Text GLabel 6050 1250 2    50   Output ~ 0
+UART_RX_MIO14
+Text GLabel 4400 1250 0    50   Input ~ 0
+UART_TX_MIO15
+$Comp
+L power:+5V #PWR?
+U 1 1 5C525614
+P 3950 1550
+AR Path="/5C1147CA/5C525614" Ref="#PWR?"  Part="1" 
+AR Path="/5CEAC2F1/5C525614" Ref="#PWR?"  Part="1" 
+AR Path="/5C525614" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3950 1400 50  0001 C CNN
+F 1 "+5V" H 3965 1723 50  0000 C CNN
+F 2 "" H 3950 1550 50  0001 C CNN
+F 3 "" H 3950 1550 50  0001 C CNN
+	1    3950 1550
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 4600 1100 1150 750 
+U 60DAA393
+F0 "power-and-uart" 50
+F1 "power-and-uart/power-test-module.sch" 50
+F2 "3V3_OUT" O L 4600 1750 50 
+F3 "5V_OUT" O L 4600 1550 50 
+F4 "UART_TX_OUT" O R 5750 1250 50 
+F5 "UART_RX_IN" I L 4600 1250 50 
+$EndSheet
 $EndSCHEMATC
