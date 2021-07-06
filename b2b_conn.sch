@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 2 11
+Sheet 2 12
 Title ""
 Date ""
 Rev ""
@@ -473,13 +473,13 @@ Wire Wire Line
 	4800 2700 5050 2700
 Wire Wire Line
 	4800 2800 5050 2800
-Text Label 4800 3000 0    50   ~ 0
+Text GLabel 4800 3000 0    50   BiDi ~ 0
 B34_L20_P
-Text Label 4800 3100 0    50   ~ 0
+Text GLabel 4800 3100 0    50   BiDi ~ 0
 B34_L20_N
-Text Label 4800 3200 0    50   ~ 0
+Text GLabel 4800 3200 0    50   BiDi ~ 0
 B34_L21_P
-Text Label 4800 3300 0    50   ~ 0
+Text GLabel 4800 3300 0    50   BiDi ~ 0
 B34_L21_N
 Wire Wire Line
 	4800 3000 5050 3000
@@ -499,9 +499,9 @@ Wire Wire Line
 	4800 3800 5050 3800
 Wire Wire Line
 	4800 3900 5050 3900
-Text Label 4800 4000 0    50   ~ 0
+Text GLabel 4800 4000 0    50   BiDi ~ 0
 B34_L13_P
-Text Label 4800 4100 0    50   ~ 0
+Text GLabel 4800 4100 0    50   BiDi ~ 0
 B34_L13_N
 Wire Wire Line
 	4800 4000 5050 4000
@@ -509,17 +509,6 @@ Wire Wire Line
 	4800 4100 5050 4100
 Wire Wire Line
 	6800 1200 6550 1200
-$Comp
-L power:GND #PWR?
-U 1 1 5BFFE126
-P 6700 4500
-F 0 "#PWR?" H 6700 4250 50  0001 C CNN
-F 1 "GND" H 6705 4327 50  0000 C CNN
-F 2 "" H 6700 4500 50  0001 C CNN
-F 3 "" H 6700 4500 50  0001 C CNN
-	1    6700 4500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6700 4500 6700 4200
 Wire Wire Line
@@ -560,46 +549,6 @@ Connection ~ 6700 4200
 Wire Wire Line
 	6700 4200 6700 3400
 NoConn ~ 6550 3900
-Text Label 6800 4000 2    50   ~ 0
-B34_L14_P
-Text Label 6800 4100 2    50   ~ 0
-B34_L14_N
-Wire Wire Line
-	6800 4000 6550 4000
-Wire Wire Line
-	6800 4100 6550 4100
-Text Label 6800 3700 2    50   ~ 0
-B34_L22_P
-Text Label 6800 3800 2    50   ~ 0
-B34_L22_N
-Wire Wire Line
-	6800 3700 6550 3700
-Wire Wire Line
-	6800 3800 6550 3800
-Text Label 6800 3500 2    50   ~ 0
-B34_L10_P
-Text Label 6800 3600 2    50   ~ 0
-B34_L10_N
-Wire Wire Line
-	6800 3500 6550 3500
-Wire Wire Line
-	6800 3600 6550 3600
-Text Label 6800 3200 2    50   ~ 0
-B34_L16_P
-Text Label 6800 3300 2    50   ~ 0
-B34_L16_N
-Wire Wire Line
-	6800 3200 6550 3200
-Wire Wire Line
-	6800 3300 6550 3300
-Text Label 6800 3000 2    50   ~ 0
-B34_L23_P
-Text Label 6800 3100 2    50   ~ 0
-B34_L23_N
-Wire Wire Line
-	6800 3000 6550 3000
-Wire Wire Line
-	6800 3100 6550 3100
 Wire Wire Line
 	6800 2700 6550 2700
 Wire Wire Line
@@ -650,20 +599,14 @@ NoConn ~ 9600 1250
 NoConn ~ 9600 1350
 Wire Wire Line
 	7650 1300 7650 1650
-Wire Wire Line
-	8100 1750 7900 1750
-Wire Wire Line
-	7900 1750 7900 1650
-Wire Wire Line
-	7900 1650 8100 1650
 NoConn ~ 9600 2150
-Text Label 9700 5450 2    50   ~ 0
+Text GLabel 9700 5450 2    50   BiDi ~ 0
 B35_L6_N
-Text Label 9700 5550 2    50   ~ 0
+Text GLabel 9700 5550 2    50   BiDi ~ 0
 B35_L6_P
-Text Label 9700 5250 2    50   ~ 0
+Text GLabel 9700 5250 2    50   BiDi ~ 0
 B35_L5_N
-Text Label 9700 5350 2    50   ~ 0
+Text GLabel 9700 5350 2    50   BiDi ~ 0
 B35_L5_P
 NoConn ~ 9600 2650
 $Comp
@@ -703,78 +646,77 @@ Wire Wire Line
 	9650 5150 9650 4650
 Wire Wire Line
 	9600 6250 9650 6250
-Connection ~ 9650 6250
 Wire Wire Line
 	9650 6250 9650 5150
-Text Label 9700 4950 2    50   ~ 0
+Text GLabel 9700 4950 2    50   BiDi ~ 0
 B35_L19_N
-Text Label 9700 5050 2    50   ~ 0
+Text GLabel 9700 5050 2    50   BiDi ~ 0
 B35_L19_P
-Text Label 9700 4750 2    50   ~ 0
+Text GLabel 9700 4750 2    50   BiDi ~ 0
 B35_L4_N
-Text Label 9700 4850 2    50   ~ 0
+Text GLabel 9700 4850 2    50   BiDi ~ 0
 B35_L4_P
-Text Label 9700 5650 2    50   ~ 0
+Text GLabel 9700 5650 2    50   BiDi ~ 0
 B35_L0
-Text Label 9700 4450 2    50   ~ 0
+Text GLabel 9700 4450 2    50   BiDi ~ 0
 B35_L7_P
-Text Label 9700 4550 2    50   ~ 0
+Text GLabel 9700 4550 2    50   BiDi ~ 0
 B35_L7_N
-Text Label 9700 4250 2    50   ~ 0
+Text GLabel 9700 4250 2    50   BiDi ~ 0
 B35_L3_N
-Text Label 9700 4350 2    50   ~ 0
+Text GLabel 9700 4350 2    50   BiDi ~ 0
 B35_L3_P
-Text Label 9700 3750 2    50   ~ 0
+Text GLabel 9700 3750 2    50   BiDi ~ 0
 B35_L11_P
-Text Label 9700 3850 2    50   ~ 0
+Text GLabel 9700 3850 2    50   BiDi ~ 0
 B35_L11_N
-Text Label 9700 3950 2    50   ~ 0
+Text GLabel 9700 3950 2    50   BiDi ~ 0
 B35_L1_N
-Text Label 9700 4050 2    50   ~ 0
+Text GLabel 9700 4050 2    50   BiDi ~ 0
 B35_L1_P
-Text Label 9700 3450 2    50   ~ 0
+Text GLabel 9700 3450 2    50   BiDi ~ 0
 B35_L8_N
-Text Label 9700 3550 2    50   ~ 0
+Text GLabel 9700 3550 2    50   BiDi ~ 0
 B35_L8_P
-Text Label 9700 3250 2    50   ~ 0
+Text GLabel 9700 3250 2    50   BiDi ~ 0
 B35_L21_N
-Text Label 9700 3350 2    50   ~ 0
+Text GLabel 9700 3350 2    50   BiDi ~ 0
 B35_L21_P
-Text Label 9700 2950 2    50   ~ 0
+Text GLabel 9700 2950 2    50   BiDi ~ 0
 B34_L7_P
-Text Label 9700 3050 2    50   ~ 0
+Text GLabel 9700 3050 2    50   BiDi ~ 0
 B34_L7_N
-Text Label 9700 2750 2    50   ~ 0
+Text GLabel 9700 2750 2    50   BiDi ~ 0
 B34_L8_P
-Text Label 9700 2850 2    50   ~ 0
+Text GLabel 9700 2850 2    50   BiDi ~ 0
 B34_L8_N
-Text Label 9700 2450 2    50   ~ 0
+Text GLabel 9700 2450 2    50   BiDi ~ 0
 B34_L12_P
-Text Label 9700 2550 2    50   ~ 0
+Text GLabel 9700 2550 2    50   BiDi ~ 0
 B34_L12_N
 Wire Wire Line
 	9700 2450 9600 2450
 Wire Wire Line
 	9700 2550 9600 2550
-Text Label 9700 2250 2    50   ~ 0
+Text GLabel 9700 2250 2    50   BiDi ~ 0
 B34_L11_P
-Text Label 9700 2350 2    50   ~ 0
+Text GLabel 9700 2350 2    50   BiDi ~ 0
 B34_L11_N
 Wire Wire Line
 	9700 2250 9600 2250
 Wire Wire Line
 	9700 2350 9600 2350
-Text Label 9700 1950 2    50   ~ 0
+Text GLabel 9700 1950 2    50   BiDi ~ 0
 B34_L18_P
-Text Label 9700 2050 2    50   ~ 0
+Text GLabel 9700 2050 2    50   BiDi ~ 0
 B34_L18_N
 Wire Wire Line
 	9700 1950 9600 1950
 Wire Wire Line
 	9700 2050 9600 2050
-Text Label 9700 1750 2    50   ~ 0
+Text GLabel 9700 1750 2    50   BiDi ~ 0
 B34_L17_P
-Text Label 9700 1850 2    50   ~ 0
+Text GLabel 9700 1850 2    50   BiDi ~ 0
 B34_L17_N
 Wire Wire Line
 	9700 1750 9600 1750
@@ -816,205 +758,6 @@ Wire Wire Line
 	9650 1650 9650 1550
 Text Notes 9700 2150 0    50   ~ 0
 DDR_PWR
-Text Label 7850 2250 0    50   ~ 0
-B34_L2_P
-Text Label 7850 2350 0    50   ~ 0
-B34_L2_N
-Wire Wire Line
-	8100 2250 7850 2250
-Wire Wire Line
-	8100 2350 7850 2350
-Text Label 7850 2450 0    50   ~ 0
-B34_L6_N
-Text Label 7850 2550 0    50   ~ 0
-B34_L6_P
-Wire Wire Line
-	8100 2450 7850 2450
-Wire Wire Line
-	8100 2550 7850 2550
-Text Label 7850 1850 0    50   ~ 0
-B34_L15_N
-Text Label 7850 1950 0    50   ~ 0
-B34_L15_P
-Wire Wire Line
-	8100 1850 7850 1850
-Wire Wire Line
-	8100 1950 7850 1950
-$Comp
-L power:GND #PWR?
-U 1 1 5C3C8E98
-P 7950 6350
-F 0 "#PWR?" H 7950 6100 50  0001 C CNN
-F 1 "GND" H 7955 6177 50  0000 C CNN
-F 2 "" H 7950 6350 50  0001 C CNN
-F 3 "" H 7950 6350 50  0001 C CNN
-	1    7950 6350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8100 2150 7950 2150
-Wire Wire Line
-	7950 2150 7950 2650
-Wire Wire Line
-	8100 6250 7950 6250
-Connection ~ 7950 6250
-Wire Wire Line
-	7950 6250 7950 6350
-Wire Wire Line
-	8100 5650 7950 5650
-Connection ~ 7950 5650
-Wire Wire Line
-	7950 5650 7950 6250
-Wire Wire Line
-	8100 5150 7950 5150
-Connection ~ 7950 5150
-Wire Wire Line
-	7950 5150 7950 5650
-Wire Wire Line
-	8100 4650 7950 4650
-Connection ~ 7950 4650
-Wire Wire Line
-	7950 4650 7950 5150
-Wire Wire Line
-	8100 4150 7950 4150
-Connection ~ 7950 4150
-Wire Wire Line
-	7950 4150 7950 4650
-Wire Wire Line
-	8100 3650 7950 3650
-Connection ~ 7950 3650
-Wire Wire Line
-	7950 3650 7950 4150
-Wire Wire Line
-	8100 3150 7950 3150
-Connection ~ 7950 3150
-Wire Wire Line
-	7950 3150 7950 3650
-Wire Wire Line
-	8100 2650 7950 2650
-Connection ~ 7950 2650
-Wire Wire Line
-	7950 2650 7950 3150
-Text HLabel 7850 2050 0    50   Input ~ 0
-RESIN
-Wire Wire Line
-	8100 2050 7850 2050
-Text Label 7850 2750 0    50   ~ 0
-B35_L16_P
-Text Label 7850 2850 0    50   ~ 0
-B35_L16_N
-Wire Wire Line
-	8100 2750 7850 2750
-Wire Wire Line
-	8100 2850 7850 2850
-Text Label 7850 2950 0    50   ~ 0
-B35_L18_N
-Text Label 7850 3050 0    50   ~ 0
-B35_L18_P
-Wire Wire Line
-	8100 2950 7850 2950
-Wire Wire Line
-	8100 3050 7850 3050
-Text Label 7850 3450 0    50   ~ 0
-B35_L13_P
-Text Label 7850 3550 0    50   ~ 0
-B35_L13_N
-Wire Wire Line
-	8100 3450 7850 3450
-Wire Wire Line
-	8100 3550 7850 3550
-Text Label 7850 3250 0    50   ~ 0
-B35_L15_N
-Text Label 7850 3350 0    50   ~ 0
-B35_L15_P
-Wire Wire Line
-	8100 3250 7850 3250
-Wire Wire Line
-	8100 3350 7850 3350
-Text Label 7850 3750 0    50   ~ 0
-B35_L14_P
-Text Label 7850 3850 0    50   ~ 0
-B35_L14_N
-Wire Wire Line
-	8100 3750 7850 3750
-Wire Wire Line
-	8100 3850 7850 3850
-Text Label 7850 3950 0    50   ~ 0
-B35_L12_P
-Text Label 7850 4050 0    50   ~ 0
-B35_L12_N
-Wire Wire Line
-	8100 3950 7850 3950
-Wire Wire Line
-	8100 4050 7850 4050
-Text Label 7850 4250 0    50   ~ 0
-B35_L23_N
-Text Label 7850 4350 0    50   ~ 0
-B35_L23_P
-Wire Wire Line
-	8100 4250 7850 4250
-Wire Wire Line
-	8100 4350 7850 4350
-Text Label 7850 4450 0    50   ~ 0
-B35_L2_N
-Text Label 7850 4550 0    50   ~ 0
-B35_L2_P
-Wire Wire Line
-	8100 4450 7850 4450
-Wire Wire Line
-	8100 4550 7850 4550
-Text Label 7850 4750 0    50   ~ 0
-B35_L17_P
-Text Label 7850 4850 0    50   ~ 0
-B35_L17_N
-Wire Wire Line
-	8100 4750 7850 4750
-Wire Wire Line
-	8100 4850 7850 4850
-Text Label 7850 4950 0    50   ~ 0
-B35_L24_P
-Text Label 7850 5050 0    50   ~ 0
-B35_L24_N
-Wire Wire Line
-	8100 4950 7850 4950
-Wire Wire Line
-	8100 5050 7850 5050
-Text Label 7850 5250 0    50   ~ 0
-B35_L9_N
-Text Label 7850 5350 0    50   ~ 0
-B35_L9_P
-Wire Wire Line
-	8100 5250 7850 5250
-Wire Wire Line
-	8100 5350 7850 5350
-Text Label 7850 5450 0    50   ~ 0
-B35_L22_N
-Text Label 7850 5550 0    50   ~ 0
-B35_L22_P
-Wire Wire Line
-	8100 5450 7850 5450
-Wire Wire Line
-	8100 5550 7850 5550
-Text Label 7850 5750 0    50   ~ 0
-B35_L10_N
-Text Label 7850 5850 0    50   ~ 0
-B35_L10_P
-Wire Wire Line
-	8100 5750 7850 5750
-Wire Wire Line
-	8100 5850 7850 5850
-Text Label 7850 5950 0    50   ~ 0
-B35_L20_N
-Text Label 7850 6050 0    50   ~ 0
-B35_L20_P
-Wire Wire Line
-	8100 5950 7850 5950
-Wire Wire Line
-	8100 6050 7850 6050
-Text Label 7850 6150 0    50   ~ 0
-B35_L25
-Wire Wire Line
-	8100 6150 7850 6150
 Wire Wire Line
 	3200 6100 3600 6100
 Wire Wire Line
@@ -1075,9 +818,6 @@ Wire Wire Line
 	9700 5550 9600 5550
 Wire Wire Line
 	9700 5450 9600 5450
-Wire Wire Line
-	7650 1650 7900 1650
-Connection ~ 7900 1650
 Connection ~ 9650 1550
 Wire Wire Line
 	9650 1550 10150 1550
@@ -1268,96 +1008,12 @@ Wire Wire Line
 	4650 1600 5050 1600
 Wire Wire Line
 	6550 1300 6850 1300
-NoConn ~ 7850 1850
-NoConn ~ 7850 1950
-NoConn ~ 7850 2250
-NoConn ~ 7850 2350
-NoConn ~ 7850 2450
-NoConn ~ 7850 2550
-NoConn ~ 7850 2750
-NoConn ~ 7850 2850
-NoConn ~ 7850 2950
-NoConn ~ 7850 3050
-NoConn ~ 7850 3250
-NoConn ~ 7850 3350
-NoConn ~ 7850 3450
-NoConn ~ 7850 3550
-NoConn ~ 7850 3750
-NoConn ~ 7850 3850
-NoConn ~ 7850 3950
-NoConn ~ 7850 4050
-NoConn ~ 7850 4250
-NoConn ~ 7850 4350
-NoConn ~ 7850 4450
-NoConn ~ 7850 4550
-NoConn ~ 7850 4750
-NoConn ~ 7850 4850
-NoConn ~ 7850 4950
-NoConn ~ 7850 5050
-NoConn ~ 7850 5250
-NoConn ~ 7850 5350
-NoConn ~ 7850 5450
-NoConn ~ 7850 5550
-NoConn ~ 7850 5750
-NoConn ~ 7850 5850
-NoConn ~ 7850 5950
-NoConn ~ 7850 6050
-NoConn ~ 7850 6150
-NoConn ~ 9700 5650
-NoConn ~ 9700 5550
-NoConn ~ 9700 5450
-NoConn ~ 9700 5350
-NoConn ~ 9700 5250
-NoConn ~ 9700 5050
-NoConn ~ 9700 4950
-NoConn ~ 9700 4850
-NoConn ~ 9700 4750
-NoConn ~ 9700 4550
-NoConn ~ 9700 4450
-NoConn ~ 9700 4350
-NoConn ~ 9700 4250
-NoConn ~ 9700 4050
-NoConn ~ 9700 3950
-NoConn ~ 9700 3850
-NoConn ~ 9700 3750
-NoConn ~ 9700 3550
-NoConn ~ 9700 3450
-NoConn ~ 9700 3350
-NoConn ~ 9700 3250
-NoConn ~ 9700 3050
-NoConn ~ 9700 2950
-NoConn ~ 9700 2850
-NoConn ~ 9700 2750
-NoConn ~ 9700 2250
-NoConn ~ 9700 2350
-NoConn ~ 9700 2550
-NoConn ~ 9700 2450
-NoConn ~ 9700 2050
-NoConn ~ 9700 1950
-NoConn ~ 9700 1850
-NoConn ~ 9700 1750
-NoConn ~ 6800 3000
-NoConn ~ 6800 3100
-NoConn ~ 6800 3200
-NoConn ~ 6800 3300
-NoConn ~ 6800 3500
-NoConn ~ 6800 3600
-NoConn ~ 6800 3700
-NoConn ~ 6800 3800
-NoConn ~ 6800 4000
-NoConn ~ 6800 4100
 Text Label 6800 2700 2    50   ~ 0
 CLKIN2_P
 Text Label 6800 2800 2    50   ~ 0
 CLKIN2_N
 NoConn ~ 6800 2800
 NoConn ~ 6800 2700
-NoConn ~ 4800 3000
-NoConn ~ 4800 3100
-NoConn ~ 4800 3200
-NoConn ~ 4800 3300
-NoConn ~ 4800 4000
-NoConn ~ 4800 4100
 Wire Wire Line
 	3200 5100 4400 5100
 $Comp
@@ -1437,4 +1093,264 @@ NoConn ~ 3600 6000
 NoConn ~ 3600 6100
 Wire Wire Line
 	3200 5500 3600 5500
+Connection ~ 9650 6250
+Text GLabel 7850 6150 0    50   BiDi ~ 0
+B35_L25
+Text GLabel 7850 6050 0    50   BiDi ~ 0
+B35_L20_P
+Text GLabel 7850 5950 0    50   BiDi ~ 0
+B35_L20_N
+Text GLabel 7850 5850 0    50   BiDi ~ 0
+B35_L10_P
+Text GLabel 7850 5750 0    50   BiDi ~ 0
+B35_L10_N
+Text GLabel 7850 5550 0    50   BiDi ~ 0
+B35_L22_P
+Text GLabel 7850 5450 0    50   BiDi ~ 0
+B35_L22_N
+Text GLabel 7850 5350 0    50   BiDi ~ 0
+B35_L9_P
+Text GLabel 7850 5250 0    50   BiDi ~ 0
+B35_L9_N
+Text GLabel 7850 5050 0    50   BiDi ~ 0
+B35_L24_N
+Text GLabel 7850 4950 0    50   BiDi ~ 0
+B35_L24_P
+Text GLabel 7850 4850 0    50   BiDi ~ 0
+B35_L17_N
+Text GLabel 7850 4750 0    50   BiDi ~ 0
+B35_L17_P
+Text GLabel 7850 4550 0    50   BiDi ~ 0
+B35_L2_P
+Text GLabel 7850 4450 0    50   BiDi ~ 0
+B35_L2_N
+Text GLabel 7850 4350 0    50   BiDi ~ 0
+B35_L23_P
+Text GLabel 7850 4250 0    50   BiDi ~ 0
+B35_L23_N
+Text GLabel 7850 4050 0    50   BiDi ~ 0
+B35_L12_N
+Text GLabel 7850 3950 0    50   BiDi ~ 0
+B35_L12_P
+Text GLabel 7850 3850 0    50   BiDi ~ 0
+B35_L14_N
+Text GLabel 7850 3750 0    50   BiDi ~ 0
+B35_L14_P
+Text GLabel 7850 3350 0    50   BiDi ~ 0
+B35_L15_P
+Text GLabel 7850 3250 0    50   BiDi ~ 0
+B35_L15_N
+Text GLabel 7850 3550 0    50   BiDi ~ 0
+B35_L13_N
+Text GLabel 7850 3450 0    50   BiDi ~ 0
+B35_L13_P
+Text GLabel 7850 3050 0    50   BiDi ~ 0
+B35_L18_P
+Text GLabel 7850 2950 0    50   BiDi ~ 0
+B35_L18_N
+Text GLabel 7850 2850 0    50   BiDi ~ 0
+B35_L16_N
+Text GLabel 7850 2750 0    50   BiDi ~ 0
+B35_L16_P
+Text HLabel 7850 2050 0    50   Input ~ 0
+RESIN
+Text GLabel 7850 1950 0    50   BiDi ~ 0
+B34_L15_P
+Text GLabel 7850 1850 0    50   BiDi ~ 0
+B34_L15_N
+Text GLabel 7850 2550 0    50   BiDi ~ 0
+B34_L6_P
+Text GLabel 7850 2450 0    50   BiDi ~ 0
+B34_L6_N
+Text GLabel 7850 2350 0    50   BiDi ~ 0
+B34_L2_N
+Text GLabel 7850 2250 0    50   BiDi ~ 0
+B34_L2_P
+Connection ~ 7950 2650
+Wire Wire Line
+	8100 2650 7950 2650
+Connection ~ 7950 3150
+Wire Wire Line
+	8100 3150 7950 3150
+Connection ~ 7950 3650
+Wire Wire Line
+	8100 3650 7950 3650
+Connection ~ 7950 4150
+Wire Wire Line
+	8100 4150 7950 4150
+Connection ~ 7950 4650
+Wire Wire Line
+	8100 4650 7950 4650
+Connection ~ 7950 5150
+Wire Wire Line
+	8100 5150 7950 5150
+Connection ~ 7950 5650
+Wire Wire Line
+	8100 5650 7950 5650
+Wire Wire Line
+	7950 6250 7950 6350
+Connection ~ 7950 6250
+Wire Wire Line
+	8100 6250 7950 6250
+Wire Wire Line
+	8100 2150 7950 2150
+Wire Wire Line
+	7950 5650 7950 6250
+Wire Wire Line
+	7950 5150 7950 5650
+Wire Wire Line
+	7950 4650 7950 5150
+Wire Wire Line
+	7950 4150 7950 4650
+Wire Wire Line
+	7950 3650 7950 4150
+Wire Wire Line
+	7950 3150 7950 3650
+Wire Wire Line
+	7950 2650 7950 3150
+Wire Wire Line
+	7950 2150 7950 2650
+Wire Wire Line
+	8100 6150 7850 6150
+Wire Wire Line
+	8100 6050 7850 6050
+Wire Wire Line
+	8100 5950 7850 5950
+Wire Wire Line
+	8100 5850 7850 5850
+Wire Wire Line
+	8100 5750 7850 5750
+Wire Wire Line
+	8100 5550 7850 5550
+Wire Wire Line
+	8100 5450 7850 5450
+Wire Wire Line
+	8100 5350 7850 5350
+Wire Wire Line
+	8100 5250 7850 5250
+Wire Wire Line
+	8100 5050 7850 5050
+Wire Wire Line
+	8100 4950 7850 4950
+Wire Wire Line
+	8100 4850 7850 4850
+Wire Wire Line
+	8100 4750 7850 4750
+Wire Wire Line
+	8100 4550 7850 4550
+Wire Wire Line
+	8100 4450 7850 4450
+Wire Wire Line
+	8100 4350 7850 4350
+Wire Wire Line
+	8100 4250 7850 4250
+Wire Wire Line
+	8100 4050 7850 4050
+Wire Wire Line
+	8100 3950 7850 3950
+Wire Wire Line
+	8100 3850 7850 3850
+Wire Wire Line
+	8100 3750 7850 3750
+Wire Wire Line
+	8100 3350 7850 3350
+Wire Wire Line
+	8100 3250 7850 3250
+Wire Wire Line
+	8100 3550 7850 3550
+Wire Wire Line
+	8100 3450 7850 3450
+Wire Wire Line
+	8100 3050 7850 3050
+Wire Wire Line
+	8100 2950 7850 2950
+Wire Wire Line
+	8100 2850 7850 2850
+Wire Wire Line
+	8100 2750 7850 2750
+Wire Wire Line
+	8100 2050 7850 2050
+$Comp
+L power:GND #PWR?
+U 1 1 610E287D
+P 7950 6350
+F 0 "#PWR?" H 7950 6100 50  0001 C CNN
+F 1 "GND" H 7955 6177 50  0000 C CNN
+F 2 "" H 7950 6350 50  0001 C CNN
+F 3 "" H 7950 6350 50  0001 C CNN
+	1    7950 6350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 1950 7850 1950
+Wire Wire Line
+	8100 1850 7850 1850
+Wire Wire Line
+	8100 2550 7850 2550
+Wire Wire Line
+	8100 2450 7850 2450
+Wire Wire Line
+	8100 2350 7850 2350
+Wire Wire Line
+	8100 2250 7850 2250
+Wire Wire Line
+	8100 1750 7900 1750
+Wire Wire Line
+	7900 1750 7900 1650
+Wire Wire Line
+	7650 1650 7900 1650
+Wire Wire Line
+	7900 1650 8100 1650
+Connection ~ 7900 1650
+$Comp
+L power:GND #PWR?
+U 1 1 611DA6EB
+P 6700 4500
+F 0 "#PWR?" H 6700 4250 50  0001 C CNN
+F 1 "GND" H 6705 4327 50  0000 C CNN
+F 2 "" H 6700 4500 50  0001 C CNN
+F 3 "" H 6700 4500 50  0001 C CNN
+	1    6700 4500
+	1    0    0    -1  
+$EndComp
+Text GLabel 6800 4000 2    50   BiDi ~ 0
+B34_L14_P
+Text GLabel 6800 4100 2    50   BiDi ~ 0
+B34_L14_N
+Wire Wire Line
+	6800 4000 6550 4000
+Wire Wire Line
+	6800 4100 6550 4100
+Text GLabel 6800 3700 2    50   BiDi ~ 0
+B34_L22_P
+Text GLabel 6800 3800 2    50   BiDi ~ 0
+B34_L22_N
+Wire Wire Line
+	6800 3700 6550 3700
+Wire Wire Line
+	6800 3800 6550 3800
+Text GLabel 6800 3500 2    50   BiDi ~ 0
+B34_L10_P
+Text GLabel 6800 3600 2    50   BiDi ~ 0
+B34_L10_N
+Wire Wire Line
+	6800 3500 6550 3500
+Wire Wire Line
+	6800 3600 6550 3600
+Text GLabel 6800 3200 2    50   BiDi ~ 0
+B34_L16_P
+Text GLabel 6800 3300 2    50   BiDi ~ 0
+B34_L16_N
+Wire Wire Line
+	6800 3200 6550 3200
+Wire Wire Line
+	6800 3300 6550 3300
+Text GLabel 6800 3000 2    50   BiDi ~ 0
+B34_L23_P
+Text GLabel 6800 3100 2    50   BiDi ~ 0
+B34_L23_N
+Wire Wire Line
+	6800 3000 6550 3000
+Wire Wire Line
+	6800 3100 6550 3100
 $EndSCHEMATC

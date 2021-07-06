@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 11
+Sheet 1 12
 Title ""
 Date ""
 Rev ""
@@ -949,4 +949,10 @@ F 3 "" H 7700 5650 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	7700 5650 8300 5650
+$Sheet
+S 6150 5450 1000 1100
+U 60F0717C
+F0 "unused_b2b" 50
+F1 "unused.sch" 50
+$EndSheet
 $EndSCHEMATC
