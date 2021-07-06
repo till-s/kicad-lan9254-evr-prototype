@@ -1,3 +1,6 @@
 [submodule "power-and-uart"]
 	path = power-and-uart
 	url = ../kicad-power-and-uart
+[submodule "lan9254"]
+	path = lan9254
+	url = ../kicad-lan9254-devl

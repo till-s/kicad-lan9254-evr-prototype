@@ -3,4 +3,5 @@
   (lib (name te0715)(type Legacy)(uri /home/till/kicad/libs/te0715.lib)(options "")(descr ""))
   (lib (name cpu-carrier-test-rescue)(type Legacy)(uri ${KIPRJMOD}/cpu-carrier-test-rescue.lib)(options "")(descr ""))
   (lib (name power-test-module-rescue)(type Legacy)(uri ${KIPRJMOD}/power-and-uart/power-test-module-rescue.lib)(options "")(descr ""))
+  (lib (name lan9254_project)(type Legacy)(uri /home/till/kicad/ecevr/devl-board/lan9254/lan9254_project.lib)(options "")(descr ""))
 )

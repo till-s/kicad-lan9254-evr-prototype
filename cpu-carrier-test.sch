@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 6
+Sheet 1 11
 Title ""
 Date ""
 Rev ""
@@ -61,14 +61,14 @@ Text GLabel 1550 4550 0    50   Input ~ 0
 MGT_TX1_P
 Text GLabel 1550 4450 0    50   Input ~ 0
 MGT_TX1_N
-Text GLabel 6500 4050 2    50   Output ~ 0
+Text GLabel 6000 3950 2    50   Output ~ 0
 MGT_CLK0_N
-Text GLabel 6500 3950 2    50   Output ~ 0
+Text GLabel 6000 3850 2    50   Output ~ 0
 MGT_CLK0_P
 Wire Wire Line
-	6400 3950 6500 3950
+	5900 3850 6000 3850
 Wire Wire Line
-	6400 4050 6500 4050
+	5900 3950 6000 3950
 Wire Wire Line
 	1550 4200 1650 4200
 Wire Wire Line
@@ -117,110 +117,110 @@ Wire Wire Line
 	1550 6550 1650 6550
 Wire Wire Line
 	1550 6650 1650 6650
-Text GLabel 8050 4900 0    50   Output ~ 0
+Text GLabel 7350 4900 0    50   Output ~ 0
 B13_L3_N
-Text GLabel 8050 4750 0    50   Output ~ 0
+Text GLabel 7350 4750 0    50   Output ~ 0
 B13_L5_P
-Text GLabel 8050 4650 0    50   Output ~ 0
+Text GLabel 7350 4650 0    50   Output ~ 0
 B13_L5_N
-Text GLabel 8050 3750 0    50   Output ~ 0
+Text GLabel 7350 3750 0    50   Output ~ 0
 B13_L9_P
-Text GLabel 8050 3650 0    50   Output ~ 0
+Text GLabel 7350 3650 0    50   Output ~ 0
 B13_L9_N
 Text GLabel 5300 3350 0    50   Output ~ 0
 B13_L12_N
 Text GLabel 5300 3250 0    50   Output ~ 0
 B13_L12_P
-Text GLabel 8050 4500 0    50   Output ~ 0
+Text GLabel 7350 4500 0    50   Output ~ 0
 B13_L2_P
-Text GLabel 8050 4400 0    50   Output ~ 0
+Text GLabel 7350 4400 0    50   Output ~ 0
 B13_L2_N
-Text GLabel 8050 4250 0    50   Output ~ 0
+Text GLabel 7350 4250 0    50   Output ~ 0
 B13_L19_P
-Text GLabel 8050 4150 0    50   Output ~ 0
+Text GLabel 7350 4150 0    50   Output ~ 0
 B13_L19_N
-Text GLabel 8050 4000 0    50   Output ~ 0
+Text GLabel 7350 4000 0    50   Output ~ 0
 B13_L1_P
-Text GLabel 8050 3900 0    50   Output ~ 0
+Text GLabel 7350 3900 0    50   Output ~ 0
 B13_L1_N
-Text GLabel 8050 2600 0    50   Output ~ 0
+Text GLabel 7350 2600 0    50   Output ~ 0
 B13_L11_N
-Text GLabel 8050 2500 0    50   Output ~ 0
+Text GLabel 7350 2500 0    50   Output ~ 0
 B13_L11_P
-Text GLabel 8050 2350 0    50   Output ~ 0
+Text GLabel 7350 2350 0    50   Output ~ 0
 B13_L17_P
-Text GLabel 8050 2250 0    50   Output ~ 0
+Text GLabel 7350 2250 0    50   Output ~ 0
 B13_L17_N
-Text GLabel 8050 2100 0    50   Output ~ 0
+Text GLabel 7350 2100 0    50   Output ~ 0
 B13_L13_N
-Text GLabel 8050 2000 0    50   Output ~ 0
+Text GLabel 7350 2000 0    50   Output ~ 0
 B13_L13_P
-Text GLabel 8050 5000 0    50   Output ~ 0
+Text GLabel 7350 5000 0    50   Output ~ 0
 B13_L3_P
 Wire Wire Line
-	8050 3650 8200 3650
+	7350 3650 7500 3650
 Wire Wire Line
-	8050 3750 8200 3750
+	7350 3750 7500 3750
 Wire Wire Line
-	8050 3900 8200 3900
+	7350 3900 7500 3900
 Wire Wire Line
-	8050 4000 8200 4000
+	7350 4000 7500 4000
 Wire Wire Line
-	8050 4150 8200 4150
+	7350 4150 7500 4150
 Wire Wire Line
-	8050 4250 8200 4250
+	7350 4250 7500 4250
 Wire Wire Line
-	8050 4400 8200 4400
+	7350 4400 7500 4400
 Wire Wire Line
-	8050 4500 8200 4500
+	7350 4500 7500 4500
 Wire Wire Line
-	8050 4650 8200 4650
+	7350 4650 7500 4650
 Wire Wire Line
-	8050 4750 8200 4750
+	7350 4750 7500 4750
 Wire Wire Line
-	8050 4900 8200 4900
+	7350 4900 7500 4900
 Wire Wire Line
-	8050 5000 8200 5000
+	7350 5000 7500 5000
 Wire Wire Line
 	5300 3350 5500 3350
 Wire Wire Line
 	5300 3250 5500 3250
 Wire Wire Line
-	8050 2600 8200 2600
+	7350 2600 7500 2600
 Wire Wire Line
-	8050 2500 8200 2500
+	7350 2500 7500 2500
 Wire Wire Line
-	8050 2000 8200 2000
+	7350 2000 7500 2000
 Wire Wire Line
-	8050 2100 8200 2100
+	7350 2100 7500 2100
 Wire Wire Line
-	8050 2250 8200 2250
+	7350 2250 7500 2250
 Wire Wire Line
-	8050 2350 8200 2350
-Text GLabel 8050 1850 0    50   Output ~ 0
+	7350 2350 7500 2350
+Text GLabel 7350 1850 0    50   Output ~ 0
 B13_L16_P
-Text GLabel 8050 1750 0    50   Output ~ 0
+Text GLabel 7350 1750 0    50   Output ~ 0
 B13_L16_N
 Wire Wire Line
-	8050 1750 8200 1750
+	7350 1750 7500 1750
 Wire Wire Line
-	8050 1850 8200 1850
-Text GLabel 8050 1600 0    50   Output ~ 0
+	7350 1850 7500 1850
+Text GLabel 7350 1600 0    50   Output ~ 0
 B13_L20_N
-Text GLabel 8050 1500 0    50   Output ~ 0
+Text GLabel 7350 1500 0    50   Output ~ 0
 B13_L20_P
-Text GLabel 8050 1350 0    50   Output ~ 0
+Text GLabel 7350 1350 0    50   Output ~ 0
 B13_L15_P
-Text GLabel 8050 1250 0    50   Output ~ 0
+Text GLabel 7350 1250 0    50   Output ~ 0
 B13_L15_N
 Wire Wire Line
-	8050 1250 8200 1250
+	7350 1250 7500 1250
 Wire Wire Line
-	8050 1350 8200 1350
+	7350 1350 7500 1350
 Wire Wire Line
-	8050 1500 8200 1500
+	7350 1500 7500 1500
 Wire Wire Line
-	8050 1600 8200 1600
+	7350 1600 7500 1600
 $Comp
 L power:GND #PWR?
 U 1 1 5D5D8F36
@@ -389,18 +389,18 @@ Wire Wire Line
 	2750 6450 2950 6450
 Wire Wire Line
 	2750 6350 2950 6350
-Text GLabel 6500 4250 2    50   Output ~ 0
+Text GLabel 6000 4150 2    50   Output ~ 0
 B13_L14_N
-Text GLabel 6500 4350 2    50   Output ~ 0
+Text GLabel 6000 4250 2    50   Output ~ 0
 B13_L14_P
-Text GLabel 6500 4450 2    50   Output ~ 0
+Text GLabel 6000 4350 2    50   Output ~ 0
 B13_L24_N
 Wire Wire Line
-	6400 4250 6500 4250
+	5900 4150 6000 4150
 Wire Wire Line
-	6400 4350 6500 4350
+	5900 4250 6000 4250
 Wire Wire Line
-	6400 4450 6500 4450
+	5900 4350 6000 4350
 Text GLabel 2950 6800 2    50   BiDi ~ 0
 SCL3
 Text GLabel 2950 6700 2    50   BiDi ~ 0
@@ -592,35 +592,35 @@ F 3 "" H 2200 3700 50  0001 C CNN
 	1    2200 3700
 	1    0    0    -1  
 $EndComp
-NoConn ~ 8200 1250
-NoConn ~ 8200 1350
-NoConn ~ 8200 1500
-NoConn ~ 8200 1600
-NoConn ~ 8200 1750
-NoConn ~ 8200 1850
-NoConn ~ 8200 2000
-NoConn ~ 8200 2100
-NoConn ~ 8200 2250
-NoConn ~ 8200 2350
-NoConn ~ 8200 2500
-NoConn ~ 8200 2600
-NoConn ~ 8200 3650
-NoConn ~ 8200 3750
-NoConn ~ 8200 3900
-NoConn ~ 8200 4000
-NoConn ~ 8200 4150
-NoConn ~ 8200 4250
-NoConn ~ 8200 4400
-NoConn ~ 8200 4500
-NoConn ~ 8200 4650
-NoConn ~ 8200 4750
-NoConn ~ 8200 4900
-NoConn ~ 8200 5000
-NoConn ~ 6400 3950
-NoConn ~ 6400 4050
-NoConn ~ 6400 4250
-NoConn ~ 6400 4350
-NoConn ~ 6400 4450
+NoConn ~ 7500 1250
+NoConn ~ 7500 1350
+NoConn ~ 7500 1500
+NoConn ~ 7500 1600
+NoConn ~ 7500 1750
+NoConn ~ 7500 1850
+NoConn ~ 7500 2000
+NoConn ~ 7500 2100
+NoConn ~ 7500 2250
+NoConn ~ 7500 2350
+NoConn ~ 7500 2500
+NoConn ~ 7500 2600
+NoConn ~ 7500 3650
+NoConn ~ 7500 3750
+NoConn ~ 7500 3900
+NoConn ~ 7500 4000
+NoConn ~ 7500 4150
+NoConn ~ 7500 4250
+NoConn ~ 7500 4400
+NoConn ~ 7500 4500
+NoConn ~ 7500 4650
+NoConn ~ 7500 4750
+NoConn ~ 7500 4900
+NoConn ~ 7500 5000
+NoConn ~ 5900 3850
+NoConn ~ 5900 3950
+NoConn ~ 5900 4150
+NoConn ~ 5900 4250
+NoConn ~ 5900 4350
 NoConn ~ 5500 3350
 NoConn ~ 5500 3250
 NoConn ~ 1650 5250
@@ -819,4 +819,61 @@ Wire Wire Line
 Connection ~ 4800 4700
 Wire Wire Line
 	4800 4700 4400 4700
+$Sheet
+S 8300 1050 1500 5450
+U 60E70F2C
+F0 "lan9254" 50
+F1 "lan9254/lan9254.sch" 50
+F2 "FPGA_0" I L 8300 1150 50 
+F3 "FPGA_1" I L 8300 1250 50 
+F4 "FPGA_2" I L 8300 1350 50 
+F5 "FPGA_3" I L 8300 1450 50 
+F6 "FPGA_4" I L 8300 1550 50 
+F7 "FPGA_5" I L 8300 1650 50 
+F8 "FPGA_6" I L 8300 1750 50 
+F9 "FPGA_7" I L 8300 1850 50 
+F10 "FPGA_8" I L 8300 1950 50 
+F11 "FPGA_9" I L 8300 2050 50 
+F12 "FPGA_10" I L 8300 2150 50 
+F13 "FPGA_11" I L 8300 2250 50 
+F14 "FPGA_12" I L 8300 2350 50 
+F15 "FPGA_13" I L 8300 2450 50 
+F16 "FPGA_14" I L 8300 2550 50 
+F17 "FPGA_15" I L 8300 2650 50 
+F18 "FPGA_16" I L 8300 2750 50 
+F19 "FPGA_17" I L 8300 2850 50 
+F20 "FPGA_18" I L 8300 2950 50 
+F21 "FPGA_19" I L 8300 3050 50 
+F22 "FPGA_20" I L 8300 3150 50 
+F23 "FPGA_21" I L 8300 3250 50 
+F24 "FPGA_22" I L 8300 3350 50 
+F25 "FPGA_23" I L 8300 3450 50 
+F26 "FPGA_24" I L 8300 3550 50 
+F27 "FPGA_25" I L 8300 3650 50 
+F28 "FPGA_26" I L 8300 3750 50 
+F29 "FPGA_27" I L 8300 3850 50 
+F30 "FPGA_28" I L 8300 3950 50 
+F31 "FPGA_29" I L 8300 4050 50 
+F32 "FPGA_30" I L 8300 4150 50 
+F33 "FPGA_31" I L 8300 4250 50 
+F34 "FPGA_32" I L 8300 4350 50 
+F35 "FPGA_33" I L 8300 4450 50 
+F36 "FPGA_34" I L 8300 4550 50 
+F37 "FPGA_35" I L 8300 4650 50 
+F38 "FPGA_36" I L 8300 4750 50 
+F39 "FPGA_37" I L 8300 4850 50 
+F40 "FPGA_38" I L 8300 4950 50 
+F41 "FPGA_39" I L 8300 5050 50 
+F42 "FPGA_40" I L 8300 5150 50 
+F43 "FPGA_41" I L 8300 5250 50 
+F44 "FPGA_42" I L 8300 5350 50 
+F45 "FPGA_43" I L 8300 5450 50 
+F46 "I2C_VCC" I L 8300 5650 50 
+F47 "SDA_3V3" B L 8300 5750 50 
+F48 "SCL_3V3" B L 8300 5850 50 
+F49 "FPGA_IO2_DIR" I L 8300 6100 50 
+F50 "FPGA_IO2_DAT" B L 8300 6200 50 
+F51 "FPGA_IO1_DAT" B L 8300 6300 50 
+F52 "FPGA_IO1_DIR" I L 8300 6400 50 
+$EndSheet
 $EndSCHEMATC
