@@ -30,9 +30,9 @@ F0 "USB, SDIO, RJ45, JTAG, UART, I2C" 50
 F1 "peripherals_1.sch" 50
 $EndSheet
 Wire Wire Line
-	5300 3500 5500 3500
+	8100 5750 8300 5750
 Wire Wire Line
-	5300 3600 5500 3600
+	8100 5850 8300 5850
 $Sheet
 S 1650 4150 1100 650 
 U 5C130F99
@@ -413,9 +413,9 @@ Text GLabel 2950 4600 2    50   BiDi ~ 0
 SDA1
 Text GLabel 2950 4700 2    50   BiDi ~ 0
 SCL1
-Text GLabel 5300 3500 0    50   BiDi ~ 0
+Text GLabel 8100 5750 0    50   BiDi ~ 0
 SDA0
-Text GLabel 5300 3600 0    50   BiDi ~ 0
+Text GLabel 8100 5850 0    50   BiDi ~ 0
 SCL0
 $Comp
 L Device:Battery_Cell BT?
@@ -933,4 +933,20 @@ $EndComp
 Wire Wire Line
 	5750 2550 5200 2550
 Connection ~ 5200 2550
+$Comp
+L power:+3V3 #PWR?
+U 1 1 60E53427
+P 7700 5650
+AR Path="/5BE73D36/60E53427" Ref="#PWR?"  Part="1" 
+AR Path="/5CEAC2F1/60E53427" Ref="#PWR?"  Part="1" 
+AR Path="/60E53427" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7700 5500 50  0001 C CNN
+F 1 "+3V3" H 7715 5823 50  0000 C CNN
+F 2 "" H 7700 5650 50  0001 C CNN
+F 3 "" H 7700 5650 50  0001 C CNN
+	1    7700 5650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 5650 8300 5650
 $EndSCHEMATC
