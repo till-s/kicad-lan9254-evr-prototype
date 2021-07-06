@@ -753,4 +753,70 @@ F 3 "~" H 5200 2550 50  0001 C CNN
 	1    5200 2550
 	1    0    0    -1  
 $EndComp
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 60DE1513
+P 4050 4600
+F 0 "H1" H 4150 4649 50  0000 L CNN
+F 1 "MountingHole_Pad" H 4150 4558 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO14580_Pad_TopBottom" H 4050 4600 50  0001 C CNN
+F 3 "~" H 4050 4600 50  0001 C CNN
+	1    4050 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 60DE15CA
+P 4400 4600
+F 0 "H2" H 4500 4649 50  0000 L CNN
+F 1 "MountingHole_Pad" H 4500 4558 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO14580_Pad_TopBottom" H 4400 4600 50  0001 C CNN
+F 3 "~" H 4400 4600 50  0001 C CNN
+	1    4400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 60DE1744
+P 4800 4600
+F 0 "H3" H 4900 4649 50  0000 L CNN
+F 1 "MountingHole_Pad" H 4900 4558 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO14580_Pad_TopBottom" H 4800 4600 50  0001 C CNN
+F 3 "~" H 4800 4600 50  0001 C CNN
+	1    4800 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 60DE197D
+P 5100 4600
+F 0 "H4" H 5200 4649 50  0000 L CNN
+F 1 "MountingHole_Pad" H 5200 4558 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO14580_Pad_TopBottom" H 5100 4600 50  0001 C CNN
+F 3 "~" H 5100 4600 50  0001 C CNN
+	1    5100 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 60DE1D1B
+P 4050 4850
+F 0 "#PWR?" H 4050 4600 50  0001 C CNN
+F 1 "GND" H 4055 4677 50  0000 C CNN
+F 2 "" H 4050 4850 50  0001 C CNN
+F 3 "" H 4050 4850 50  0001 C CNN
+	1    4050 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 4850 4050 4700
+Wire Wire Line
+	5100 4700 4800 4700
+Connection ~ 4050 4700
+Connection ~ 4400 4700
+Wire Wire Line
+	4400 4700 4050 4700
+Connection ~ 4800 4700
+Wire Wire Line
+	4800 4700 4400 4700
 $EndSCHEMATC
