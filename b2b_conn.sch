@@ -190,8 +190,6 @@ Wire Wire Line
 Wire Wire Line
 	3200 5300 3600 5300
 Wire Wire Line
-	3200 5500 3600 5500
-Wire Wire Line
 	3600 5700 3200 5700
 Wire Wire Line
 	3600 5800 3200 5800
@@ -1375,10 +1373,6 @@ F 3 "" H 4400 5100 50  0001 C CNN
 $EndComp
 Text GLabel 3600 2700 2    50   Output ~ 0
 B13_L3_P
-Text Label 3600 5500 2    50   ~ 0
-MIO_0
-Text Label 3600 5700 2    50   ~ 0
-MIO9
 NoConn ~ 1300 6000
 NoConn ~ 1300 6100
 $Comp
@@ -1441,4 +1435,6 @@ Text GLabel 3600 5800 2    50   BiDi ~ 0
 SDA_MIO11
 NoConn ~ 3600 6000
 NoConn ~ 3600 6100
+Wire Wire Line
+	3200 5500 3600 5500
 $EndSCHEMATC
