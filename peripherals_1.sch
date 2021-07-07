@@ -18,9 +18,11 @@ L fmc:Molex_0936263508 J5
 U 1 1 5C231CE4
 P 9650 2050
 F 0 "J5" V 9183 2050 50  0000 C CNN
-F 1 "Molex_0936263508" V 9274 2050 50  0000 C CNN
+F 1 "GigE-RJ45" V 9274 2050 50  0000 C CNN
 F 2 "proj_footprints:Molex_936263508" H 9650 2050 50  0001 C CNN
 F 3 "" H 9410 1995 50  0001 L TNN
+F 4 "Molex" V 9650 2050 50  0001 C CNN "Manufacturer"
+F 5 "936263508" V 9650 2050 50  0001 C CNN "Part"
 	1    9650 2050
 	-1   0    0    -1  
 $EndComp
@@ -233,8 +235,8 @@ F 0 "FL3" H 9250 5800 50  0000 C CNN
 F 1 "EMI_Filter_LL_14" H 9300 5600 50  0000 C CNN
 F 2 "proj_footprints:WE_CNSW" V 9300 6090 50  0001 C CNN
 F 3 "https://www.digikey.com/catalog/en/partgroup/we-cnsw-we-cnsw-hf/22783?mpart=744231371&vendor=732" H 9300 6237 50  0001 C CNN
-F 4 "TOKO" H 9300 6050 50  0001 C CNN "Manufacturer"
-F 5 "FDV0530S-1R0" H 9300 6050 50  0001 C CNN "Part"
+F 4 "Wurth" H 9300 6050 50  0001 C CNN "Manufacturer"
+F 5 "744231371" H 9300 6050 50  0001 C CNN "Part"
 	1    9300 6050
 	1    0    0    1   
 $EndComp
@@ -1166,6 +1168,8 @@ F 0 "J1" H 1550 2833 50  0000 C CNN
 F 1 "Micro_SD_Card_Det" H 1550 2924 50  0000 C CNN
 F 2 "proj_footprints:microSD_HC_Hirose_DM3D-SF_smaller_crtyd" H 3650 4350 50  0001 C CNN
 F 3 "https://www.hirose.com/product/en/download_file/key_name/DM3/category/Catalog/doc_file_id/49662/?file_category_id=4&item_id=195&is_series=1" H 1600 3750 50  0001 C CNN
+F 4 "DM3D-SF" H 1600 3650 50  0001 C CNN "Part"
+F 5 "Hirose" H 1600 3650 50  0001 C CNN "Manufacturer"
 	1    1600 3650
 	-1   0    0    1   
 $EndComp
