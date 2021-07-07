@@ -363,18 +363,10 @@ Wire Wire Line
 	1700 4600 1300 4600
 Wire Wire Line
 	1700 4700 1300 4700
-Text Label 1300 4900 0    50   ~ 0
-B13_L18_P
-Text Label 1300 5000 0    50   ~ 0
-B13_L18_N
 Wire Wire Line
 	1700 4900 1300 4900
 Wire Wire Line
 	1700 5000 1300 5000
-Text Label 1300 5100 0    50   ~ 0
-B13_L21_N
-Text Label 1300 5200 0    50   ~ 0
-B13_L21_P
 Wire Wire Line
 	1700 5100 1300 5100
 Wire Wire Line
@@ -1062,10 +1054,6 @@ B13_L14_P
 Text GLabel 1300 4600 0    50   Input ~ 0
 B13_L24_N
 NoConn ~ 1300 4700
-NoConn ~ 1300 4900
-NoConn ~ 1300 5000
-NoConn ~ 1300 5100
-NoConn ~ 1300 5200
 $Comp
 L te0715:LSHM-130-04_JB3 JB3
 U 1 1 5D7BBEB3
@@ -1353,4 +1341,12 @@ Wire Wire Line
 	6800 3000 6550 3000
 Wire Wire Line
 	6800 3100 6550 3100
+Text GLabel 1300 5200 0    50   Output ~ 0
+B13_L21_P
+Text GLabel 1300 5100 0    50   Output ~ 0
+B13_L21_N
+Text GLabel 1300 5000 0    50   Output ~ 0
+B13_L18_N
+Text GLabel 1300 4900 0    50   Output ~ 0
+B13_L18_P
 $EndSCHEMATC
