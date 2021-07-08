@@ -13,247 +13,343 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 5050 3350 2    50   BiDi ~ 0
+Text GLabel 7150 2300 2    50   BiDi ~ 0
 B34_L14_P
-Text GLabel 5050 3450 2    50   BiDi ~ 0
+Text GLabel 7150 2400 2    50   BiDi ~ 0
 B34_L14_N
-Text GLabel 5050 3050 2    50   BiDi ~ 0
+Text GLabel 7150 2000 2    50   BiDi ~ 0
 B34_L22_P
-Text GLabel 5050 3150 2    50   BiDi ~ 0
+Text GLabel 7150 2100 2    50   BiDi ~ 0
 B34_L22_N
-Text GLabel 5050 2850 2    50   BiDi ~ 0
+Text GLabel 7150 1800 2    50   BiDi ~ 0
 B34_L10_P
-Text GLabel 5050 2950 2    50   BiDi ~ 0
+Text GLabel 7150 1900 2    50   BiDi ~ 0
 B34_L10_N
-Text GLabel 5050 2550 2    50   BiDi ~ 0
+Text GLabel 7150 1500 2    50   BiDi ~ 0
 B34_L16_P
-Text GLabel 5050 2650 2    50   BiDi ~ 0
+Text GLabel 7150 1600 2    50   BiDi ~ 0
 B34_L16_N
-Text GLabel 5050 2350 2    50   BiDi ~ 0
+Text GLabel 7150 1300 2    50   BiDi ~ 0
 B34_L23_P
-Text GLabel 5050 2450 2    50   BiDi ~ 0
+Text GLabel 7150 1400 2    50   BiDi ~ 0
 B34_L23_N
-NoConn ~ 5050 2350
-NoConn ~ 5050 2450
-NoConn ~ 5050 2550
-NoConn ~ 5050 2650
-NoConn ~ 5050 2850
-NoConn ~ 5050 2950
-NoConn ~ 5050 3050
-NoConn ~ 5050 3150
-NoConn ~ 5050 3350
-NoConn ~ 5050 3450
-Text GLabel 4100 2350 0    50   BiDi ~ 0
+NoConn ~ 7150 1300
+NoConn ~ 7150 1400
+NoConn ~ 7150 1500
+NoConn ~ 7150 1600
+NoConn ~ 7150 1800
+NoConn ~ 7150 1900
+NoConn ~ 7150 2000
+NoConn ~ 7150 2100
+NoConn ~ 7150 2300
+NoConn ~ 7150 2400
+Text GLabel 6200 1300 0    50   BiDi ~ 0
 B34_L20_P
-Text GLabel 4100 2450 0    50   BiDi ~ 0
+Text GLabel 6200 1400 0    50   BiDi ~ 0
 B34_L20_N
-Text GLabel 4100 2550 0    50   BiDi ~ 0
+Text GLabel 6200 1500 0    50   BiDi ~ 0
 B34_L21_P
-Text GLabel 4100 2650 0    50   BiDi ~ 0
+Text GLabel 6200 1600 0    50   BiDi ~ 0
 B34_L21_N
-Text GLabel 4100 3350 0    50   BiDi ~ 0
+Text GLabel 6200 2300 0    50   BiDi ~ 0
 B34_L13_P
-Text GLabel 4100 3450 0    50   BiDi ~ 0
+Text GLabel 6200 2400 0    50   BiDi ~ 0
 B34_L13_N
-NoConn ~ 4100 2350
-NoConn ~ 4100 2450
-NoConn ~ 4100 2550
-NoConn ~ 4100 2650
-NoConn ~ 4100 3350
-NoConn ~ 4100 3450
-Text GLabel 2550 5150 0    50   Output ~ 0
+NoConn ~ 6200 1300
+NoConn ~ 6200 1400
+NoConn ~ 6200 1500
+NoConn ~ 6200 1600
+NoConn ~ 6200 2300
+NoConn ~ 6200 2400
+Text GLabel 2900 4450 0    50   Output ~ 0
 B13_L3_N
-Text GLabel 2550 5000 0    50   Output ~ 0
+Text GLabel 2900 4300 0    50   Output ~ 0
 B13_L5_P
-Text GLabel 2550 4900 0    50   Output ~ 0
+Text GLabel 2900 4200 0    50   Output ~ 0
 B13_L5_N
-Text GLabel 2550 4000 0    50   Output ~ 0
+Text GLabel 2900 3300 0    50   Output ~ 0
 B13_L9_P
-Text GLabel 2550 3900 0    50   Output ~ 0
+Text GLabel 2900 3200 0    50   Output ~ 0
 B13_L9_N
-Text GLabel 2550 4750 0    50   Output ~ 0
+Text GLabel 2900 4050 0    50   Output ~ 0
 B13_L2_P
-Text GLabel 2550 4650 0    50   Output ~ 0
+Text GLabel 2900 3950 0    50   Output ~ 0
 B13_L2_N
-Text GLabel 2550 4500 0    50   Output ~ 0
+Text GLabel 2900 3800 0    50   Output ~ 0
 B13_L19_P
-Text GLabel 2550 4400 0    50   Output ~ 0
+Text GLabel 2900 3700 0    50   Output ~ 0
 B13_L19_N
-Text GLabel 2550 4250 0    50   Output ~ 0
+Text GLabel 2900 3550 0    50   Output ~ 0
 B13_L1_P
-Text GLabel 2550 4150 0    50   Output ~ 0
+Text GLabel 2900 3450 0    50   Output ~ 0
 B13_L1_N
-Text GLabel 2550 2850 0    50   Output ~ 0
+Text GLabel 2900 2150 0    50   Output ~ 0
 B13_L11_N
-Text GLabel 2550 2750 0    50   Output ~ 0
+Text GLabel 2900 2050 0    50   Output ~ 0
 B13_L11_P
-Text GLabel 2550 2600 0    50   Output ~ 0
+Text GLabel 2900 1900 0    50   Output ~ 0
 B13_L17_P
-Text GLabel 2550 2500 0    50   Output ~ 0
+Text GLabel 2900 1800 0    50   Output ~ 0
 B13_L17_N
-Text GLabel 2550 2350 0    50   Output ~ 0
+Text GLabel 2900 1650 0    50   Output ~ 0
 B13_L13_N
-Text GLabel 2550 2250 0    50   Output ~ 0
+Text GLabel 2900 1550 0    50   Output ~ 0
 B13_L13_P
-Text GLabel 2550 5250 0    50   Output ~ 0
+Text GLabel 2900 4550 0    50   Output ~ 0
 B13_L3_P
 Wire Wire Line
-	2550 3900 2700 3900
+	2900 3200 3050 3200
 Wire Wire Line
-	2550 4000 2700 4000
+	2900 3300 3050 3300
 Wire Wire Line
-	2550 4150 2700 4150
+	2900 3450 3050 3450
 Wire Wire Line
-	2550 4250 2700 4250
+	2900 3550 3050 3550
 Wire Wire Line
-	2550 4400 2700 4400
+	2900 3700 3050 3700
 Wire Wire Line
-	2550 4500 2700 4500
+	2900 3800 3050 3800
 Wire Wire Line
-	2550 4650 2700 4650
+	2900 3950 3050 3950
 Wire Wire Line
-	2550 4750 2700 4750
+	2900 4050 3050 4050
 Wire Wire Line
-	2550 4900 2700 4900
+	2900 4200 3050 4200
 Wire Wire Line
-	2550 5000 2700 5000
+	2900 4300 3050 4300
 Wire Wire Line
-	2550 5150 2700 5150
+	2900 4450 3050 4450
 Wire Wire Line
-	2550 5250 2700 5250
+	2900 4550 3050 4550
 Wire Wire Line
-	2550 2850 2700 2850
+	2900 2150 3050 2150
 Wire Wire Line
-	2550 2750 2700 2750
+	2900 2050 3050 2050
 Wire Wire Line
-	2550 2250 2700 2250
+	2900 1550 3050 1550
 Wire Wire Line
-	2550 2350 2700 2350
+	2900 1650 3050 1650
 Wire Wire Line
-	2550 2500 2700 2500
+	2900 1800 3050 1800
 Wire Wire Line
-	2550 2600 2700 2600
-Text GLabel 2550 2100 0    50   Output ~ 0
+	2900 1900 3050 1900
+Text GLabel 2900 1400 0    50   Output ~ 0
 B13_L16_P
-Text GLabel 2550 2000 0    50   Output ~ 0
+Text GLabel 2900 1300 0    50   Output ~ 0
 B13_L16_N
 Wire Wire Line
-	2550 2000 2700 2000
+	2900 1300 3050 1300
 Wire Wire Line
-	2550 2100 2700 2100
-NoConn ~ 2700 2000
-NoConn ~ 2700 2100
-NoConn ~ 2700 2250
-NoConn ~ 2700 2350
-NoConn ~ 2700 2500
-NoConn ~ 2700 2600
-NoConn ~ 2700 2750
-NoConn ~ 2700 2850
-NoConn ~ 2700 3900
-NoConn ~ 2700 4000
-NoConn ~ 2700 4150
-NoConn ~ 2700 4250
-NoConn ~ 2700 4400
-NoConn ~ 2700 4500
-NoConn ~ 2700 4650
-NoConn ~ 2700 4750
-NoConn ~ 2700 4900
-NoConn ~ 2700 5000
-NoConn ~ 2700 5150
-NoConn ~ 2700 5250
-Text GLabel 1000 4850 2    50   Output ~ 0
+	2900 1400 3050 1400
+NoConn ~ 3050 1300
+NoConn ~ 3050 1400
+NoConn ~ 3050 1550
+NoConn ~ 3050 1650
+NoConn ~ 3050 1800
+NoConn ~ 3050 1900
+NoConn ~ 3050 2050
+NoConn ~ 3050 2150
+NoConn ~ 3050 3200
+NoConn ~ 3050 3300
+NoConn ~ 3050 3450
+NoConn ~ 3050 3550
+NoConn ~ 3050 3700
+NoConn ~ 3050 3800
+NoConn ~ 3050 3950
+NoConn ~ 3050 4050
+NoConn ~ 3050 4200
+NoConn ~ 3050 4300
+NoConn ~ 3050 4450
+NoConn ~ 3050 4550
+Text GLabel 1350 4150 2    50   Output ~ 0
 MGT_CLK0_N
-Text GLabel 1000 4750 2    50   Output ~ 0
+Text GLabel 1350 4050 2    50   Output ~ 0
 MGT_CLK0_P
 Wire Wire Line
-	900  4750 1000 4750
+	1250 4050 1350 4050
 Wire Wire Line
-	900  4850 1000 4850
-Text GLabel 1000 5050 2    50   Output ~ 0
+	1250 4150 1350 4150
+Text GLabel 1350 4350 2    50   Output ~ 0
 B13_L14_N
-Text GLabel 1000 5150 2    50   Output ~ 0
+Text GLabel 1350 4450 2    50   Output ~ 0
 B13_L14_P
-Text GLabel 1000 5250 2    50   Output ~ 0
+Text GLabel 1350 4550 2    50   Output ~ 0
 B13_L24_N
 Wire Wire Line
-	900  5050 1000 5050
+	1250 4350 1350 4350
 Wire Wire Line
-	900  5150 1000 5150
+	1250 4450 1350 4450
 Wire Wire Line
-	900  5250 1000 5250
-NoConn ~ 900  4750
-NoConn ~ 900  4850
-NoConn ~ 900  5050
-NoConn ~ 900  5150
-NoConn ~ 900  5250
-Text GLabel 7400 5550 2    50   BiDi ~ 0
+	1250 4550 1350 4550
+NoConn ~ 1250 4050
+NoConn ~ 1250 4150
+NoConn ~ 1250 4350
+NoConn ~ 1250 4450
+NoConn ~ 1250 4550
+Text GLabel 10150 5100 2    50   BiDi ~ 0
 B35_L6_P
-Text GLabel 7400 5350 2    50   BiDi ~ 0
+Text GLabel 10150 4900 2    50   BiDi ~ 0
 B35_L5_P
-Text GLabel 7400 4950 2    50   BiDi ~ 0
+Text GLabel 10150 4500 2    50   BiDi ~ 0
 B35_L19_N
-Text GLabel 7400 5050 2    50   BiDi ~ 0
+Text GLabel 10150 4600 2    50   BiDi ~ 0
 B35_L19_P
-Text GLabel 7400 4750 2    50   BiDi ~ 0
+Text GLabel 10150 4300 2    50   BiDi ~ 0
 B35_L4_N
-Text GLabel 7400 4450 2    50   BiDi ~ 0
+Text GLabel 10150 4000 2    50   BiDi ~ 0
 B35_L7_P
-Text GLabel 7400 4350 2    50   BiDi ~ 0
+Text GLabel 10150 3900 2    50   BiDi ~ 0
 B35_L3_P
-Text GLabel 7400 3750 2    50   BiDi ~ 0
+Text GLabel 10150 3300 2    50   BiDi ~ 0
 B35_L11_P
-Text GLabel 7400 3950 2    50   BiDi ~ 0
+Text GLabel 10150 3500 2    50   BiDi ~ 0
 B35_L1_N
-Text GLabel 7400 4050 2    50   BiDi ~ 0
+Text GLabel 10150 3600 2    50   BiDi ~ 0
 B35_L1_P
-Text GLabel 7400 3450 2    50   BiDi ~ 0
+Text GLabel 10150 3000 2    50   BiDi ~ 0
 B35_L8_N
-Text GLabel 7400 3250 2    50   BiDi ~ 0
+Text GLabel 10150 2800 2    50   BiDi ~ 0
 B35_L21_N
-Text GLabel 7400 2950 2    50   BiDi ~ 0
+Text GLabel 10150 2500 2    50   BiDi ~ 0
 B34_L7_P
-Text GLabel 7400 2850 2    50   BiDi ~ 0
+Text GLabel 10150 2400 2    50   BiDi ~ 0
 B34_L8_N
-Text GLabel 7400 2550 2    50   BiDi ~ 0
+Text GLabel 10150 2100 2    50   BiDi ~ 0
 B34_L12_N
-Text GLabel 7400 2250 2    50   BiDi ~ 0
+Text GLabel 10150 1800 2    50   BiDi ~ 0
 B34_L11_P
-Text GLabel 7400 2350 2    50   BiDi ~ 0
+Text GLabel 10150 1900 2    50   BiDi ~ 0
 B34_L11_N
-Text GLabel 7400 1950 2    50   BiDi ~ 0
+Text GLabel 10150 1500 2    50   BiDi ~ 0
 B34_L18_P
-Text GLabel 7400 1750 2    50   BiDi ~ 0
+Text GLabel 10150 1300 2    50   BiDi ~ 0
 B34_L17_P
-Text GLabel 7400 1850 2    50   BiDi ~ 0
+Text GLabel 10150 1400 2    50   BiDi ~ 0
 B34_L17_N
-NoConn ~ 7400 1750
-NoConn ~ 7400 1850
-NoConn ~ 7400 1950
-NoConn ~ 7400 2250
-NoConn ~ 7400 2350
-NoConn ~ 7400 2550
-NoConn ~ 7400 2850
-NoConn ~ 7400 2950
-NoConn ~ 7400 3250
-NoConn ~ 7400 3450
-NoConn ~ 7400 3750
-NoConn ~ 7400 3950
-NoConn ~ 7400 4050
-NoConn ~ 7400 4350
-NoConn ~ 7400 4450
-NoConn ~ 7400 4750
-NoConn ~ 7400 4950
-NoConn ~ 7400 5050
-NoConn ~ 7400 5350
-NoConn ~ 7400 5550
-Text GLabel 1400 6500 0    50   Output ~ 0
+NoConn ~ 10150 1300
+NoConn ~ 10150 1400
+NoConn ~ 10150 1500
+NoConn ~ 10150 1800
+NoConn ~ 10150 1900
+NoConn ~ 10150 2100
+NoConn ~ 10150 2400
+NoConn ~ 10150 2500
+NoConn ~ 10150 2800
+NoConn ~ 10150 3000
+NoConn ~ 10150 3300
+NoConn ~ 10150 3500
+NoConn ~ 10150 3600
+NoConn ~ 10150 3900
+NoConn ~ 10150 4000
+NoConn ~ 10150 4300
+NoConn ~ 10150 4500
+NoConn ~ 10150 4600
+NoConn ~ 10150 4900
+NoConn ~ 10150 5100
+Text GLabel 1750 5800 0    50   Output ~ 0
 B13_L12_N
-Text GLabel 1400 6400 0    50   Output ~ 0
+Text GLabel 1750 5700 0    50   Output ~ 0
 B13_L12_P
 Wire Wire Line
-	1400 6500 1600 6500
+	1750 5800 1950 5800
 Wire Wire Line
-	1400 6400 1600 6400
-NoConn ~ 1600 6500
-NoConn ~ 1600 6400
+	1750 5700 1950 5700
+NoConn ~ 1950 5800
+NoConn ~ 1950 5700
+Wire Wire Line
+	5800 6000 6000 6000
+Wire Wire Line
+	5800 6100 6000 6100
+Text GLabel 4600 5700 0    50   Output ~ 0
+MGT_RX2_N
+Text GLabel 4600 5600 0    50   Output ~ 0
+MGT_RX2_P
+Text GLabel 4600 5850 0    50   Input ~ 0
+MGT_TX2_P
+Text GLabel 4600 5950 0    50   Input ~ 0
+MGT_TX2_N
+Wire Wire Line
+	4600 5600 4700 5600
+Wire Wire Line
+	4600 5700 4700 5700
+Wire Wire Line
+	4600 5850 4700 5850
+Wire Wire Line
+	4600 5950 4700 5950
+Wire Wire Line
+	5800 7050 6000 7050
+Wire Wire Line
+	5800 7150 6000 7150
+Text GLabel 4600 6750 0    50   Output ~ 0
+MGT_RX3_N
+Text GLabel 4600 6650 0    50   Output ~ 0
+MGT_RX3_P
+Text GLabel 4600 6900 0    50   Input ~ 0
+MGT_TX3_P
+Text GLabel 4600 7000 0    50   Input ~ 0
+MGT_TX3_N
+Wire Wire Line
+	4600 6650 4700 6650
+Wire Wire Line
+	4600 6750 4700 6750
+Wire Wire Line
+	4600 6900 4700 6900
+Wire Wire Line
+	4600 7000 4700 7000
+Text GLabel 6000 5650 2    50   Output ~ 0
+B13_L7_P
+Text GLabel 4600 6100 0    50   Input ~ 0
+B13_L7_N
+Text GLabel 6000 5850 2    50   Output ~ 0
+B13_L8_P
+Text GLabel 6000 5750 2    50   Output ~ 0
+B13_L8_N
+Text GLabel 6000 6700 2    50   Output ~ 0
+B13_L10_P
+Text GLabel 4600 7150 0    50   Input ~ 0
+B13_L10_N
+Text GLabel 6000 6900 2    50   Output ~ 0
+B13_L23_P
+Text GLabel 6000 6800 2    50   Output ~ 0
+B13_L23_N
+Wire Wire Line
+	4600 6100 4700 6100
+Wire Wire Line
+	5800 5650 6000 5650
+Wire Wire Line
+	5800 5750 6000 5750
+Wire Wire Line
+	5800 5850 6000 5850
+Wire Wire Line
+	4600 7150 4700 7150
+Wire Wire Line
+	5800 6900 6000 6900
+Wire Wire Line
+	5800 6800 6000 6800
+Wire Wire Line
+	5800 6700 6000 6700
+Text GLabel 6000 7150 2    50   BiDi ~ 0
+SCL3
+Text GLabel 6000 7050 2    50   BiDi ~ 0
+SDA3
+Text GLabel 6000 6100 2    50   BiDi ~ 0
+SCL2
+Text GLabel 6000 6000 2    50   BiDi ~ 0
+SDA2
+NoConn ~ 4700 5600
+NoConn ~ 4700 5700
+NoConn ~ 4700 5850
+NoConn ~ 4700 5950
+NoConn ~ 4700 6100
+NoConn ~ 4700 6650
+NoConn ~ 4700 6750
+NoConn ~ 4700 6900
+NoConn ~ 4700 7000
+NoConn ~ 4700 7150
+NoConn ~ 5800 6700
+NoConn ~ 5800 6800
+NoConn ~ 5800 6900
+NoConn ~ 5800 5850
+NoConn ~ 5800 5750
+NoConn ~ 5800 5650
 $EndSCHEMATC

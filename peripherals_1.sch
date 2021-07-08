@@ -230,24 +230,16 @@ Wire Wire Line
 $Comp
 L fmc:EMI_Filter_LL_14 FL3
 U 1 1 5C29619B
-P 9300 6050
-F 0 "FL3" H 9250 5800 50  0000 C CNN
-F 1 "EMI_Filter_LL_14" H 9300 5600 50  0000 C CNN
-F 2 "proj_footprints:WE_CNSW" V 9300 6090 50  0001 C CNN
-F 3 "https://www.digikey.com/catalog/en/partgroup/we-cnsw-we-cnsw-hf/22783?mpart=744231371&vendor=732" H 9300 6237 50  0001 C CNN
-F 4 "Wurth" H 9300 6050 50  0001 C CNN "Manufacturer"
-F 5 "744231371" H 9300 6050 50  0001 C CNN "Part"
-	1    9300 6050
+P 8550 6050
+F 0 "FL3" H 8500 5800 50  0000 C CNN
+F 1 "EMI_Filter_LL_14" H 8550 5600 50  0000 C CNN
+F 2 "proj_footprints:WE_CNSW" V 8550 6090 50  0001 C CNN
+F 3 "https://www.digikey.com/catalog/en/partgroup/we-cnsw-we-cnsw-hf/22783?mpart=744231371&vendor=732" H 8550 6237 50  0001 C CNN
+F 4 "Wurth" H 8550 6050 50  0001 C CNN "Manufacturer"
+F 5 "744231371" H 8550 6050 50  0001 C CNN "Part"
+	1    8550 6050
 	1    0    0    1   
 $EndComp
-Wire Wire Line
-	9500 5950 9500 6000
-Wire Wire Line
-	9500 6000 9800 6000
-Wire Wire Line
-	9500 6150 9500 6100
-Wire Wire Line
-	9500 6100 9800 6100
 $Comp
 L trigbox:R10k R34
 U 1 1 5C29C5B4
@@ -281,9 +273,9 @@ Wire Wire Line
 Wire Wire Line
 	8850 5750 7400 5750
 Wire Wire Line
-	7400 5950 9100 5950
+	7400 5950 8350 5950
 Wire Wire Line
-	7400 6150 9100 6150
+	7400 6150 8350 6150
 $Comp
 L power:GND #PWR?
 U 1 1 5C2B11D4
@@ -1249,4 +1241,16 @@ F 3 "~" H 6500 1500 50  0001 C CNN
 	1    6500 1500
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	8750 5950 8750 6000
+Wire Wire Line
+	8750 6000 9800 6000
+Wire Wire Line
+	8750 6150 8750 6100
+Wire Wire Line
+	8750 6100 9800 6100
+Text Label 8850 6000 0    50   ~ 0
+USBA_P
+Text Label 8850 6100 0    50   ~ 0
+USBA_N
 $EndSCHEMATC

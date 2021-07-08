@@ -69,46 +69,6 @@ Wire Wire Line
 	1550 4450 1650 4450
 Wire Wire Line
 	1550 4550 1650 4550
-Wire Wire Line
-	2750 5650 2950 5650
-Wire Wire Line
-	2750 5750 2950 5750
-Text GLabel 1550 5350 0    50   Output ~ 0
-MGT_RX2_N
-Text GLabel 1550 5250 0    50   Output ~ 0
-MGT_RX2_P
-Text GLabel 1550 5500 0    50   Input ~ 0
-MGT_TX2_P
-Text GLabel 1550 5600 0    50   Input ~ 0
-MGT_TX2_N
-Wire Wire Line
-	1550 5250 1650 5250
-Wire Wire Line
-	1550 5350 1650 5350
-Wire Wire Line
-	1550 5500 1650 5500
-Wire Wire Line
-	1550 5600 1650 5600
-Wire Wire Line
-	2750 6700 2950 6700
-Wire Wire Line
-	2750 6800 2950 6800
-Text GLabel 1550 6400 0    50   Output ~ 0
-MGT_RX3_N
-Text GLabel 1550 6300 0    50   Output ~ 0
-MGT_RX3_P
-Text GLabel 1550 6550 0    50   Input ~ 0
-MGT_TX3_P
-Text GLabel 1550 6650 0    50   Input ~ 0
-MGT_TX3_N
-Wire Wire Line
-	1550 6300 1650 6300
-Wire Wire Line
-	1550 6400 1650 6400
-Wire Wire Line
-	1550 6550 1650 6550
-Wire Wire Line
-	1550 6650 1650 6650
 $Comp
 L power:GND #PWR?
 U 1 1 5D5D8F36
@@ -237,22 +197,6 @@ Text GLabel 2950 4450 2    50   Output ~ 0
 B13_L4_P
 Text GLabel 2950 4350 2    50   Output ~ 0
 B13_L4_N
-Text GLabel 2950 5300 2    50   Output ~ 0
-B13_L7_P
-Text GLabel 1550 5750 0    50   Input ~ 0
-B13_L7_N
-Text GLabel 2950 5500 2    50   Output ~ 0
-B13_L8_P
-Text GLabel 2950 5400 2    50   Output ~ 0
-B13_L8_N
-Text GLabel 2950 6350 2    50   Output ~ 0
-B13_L10_P
-Text GLabel 1550 6800 0    50   Input ~ 0
-B13_L10_N
-Text GLabel 2950 6550 2    50   Output ~ 0
-B13_L23_P
-Text GLabel 2950 6450 2    50   Output ~ 0
-B13_L23_N
 Wire Wire Line
 	2750 4250 2950 4250
 Wire Wire Line
@@ -261,30 +205,6 @@ Wire Wire Line
 	2750 4450 2950 4450
 Wire Wire Line
 	1550 4700 1650 4700
-Wire Wire Line
-	1550 5750 1650 5750
-Wire Wire Line
-	2750 5300 2950 5300
-Wire Wire Line
-	2750 5400 2950 5400
-Wire Wire Line
-	2750 5500 2950 5500
-Wire Wire Line
-	1550 6800 1650 6800
-Wire Wire Line
-	2750 6550 2950 6550
-Wire Wire Line
-	2750 6450 2950 6450
-Wire Wire Line
-	2750 6350 2950 6350
-Text GLabel 2950 6800 2    50   BiDi ~ 0
-SCL3
-Text GLabel 2950 6700 2    50   BiDi ~ 0
-SDA3
-Text GLabel 2950 5750 2    50   BiDi ~ 0
-SCL2
-Text GLabel 2950 5650 2    50   BiDi ~ 0
-SDA2
 Text GLabel 2950 4600 2    50   BiDi ~ 0
 SDA1
 Text GLabel 2950 4700 2    50   BiDi ~ 0
@@ -468,22 +388,6 @@ F 3 "" H 2200 3700 50  0001 C CNN
 	1    2200 3700
 	1    0    0    -1  
 $EndComp
-NoConn ~ 1650 5250
-NoConn ~ 1650 5350
-NoConn ~ 1650 5500
-NoConn ~ 1650 5600
-NoConn ~ 1650 5750
-NoConn ~ 1650 6300
-NoConn ~ 1650 6400
-NoConn ~ 1650 6550
-NoConn ~ 1650 6650
-NoConn ~ 1650 6800
-NoConn ~ 2750 6350
-NoConn ~ 2750 6450
-NoConn ~ 2750 6550
-NoConn ~ 2750 5500
-NoConn ~ 2750 5400
-NoConn ~ 2750 5300
 Wire Wire Line
 	4450 2550 4600 2550
 Wire Wire Line
@@ -1035,8 +939,8 @@ F 3 "" H 5400 3500 50  0001 C CNN
 $EndComp
 Text Notes 5750 3550 0    50   ~ 0
 GREEN LED
-Text Notes 1600 7600 0    50   ~ 0
-Mounting Holes
+Text Notes 1600 7700 0    50   ~ 0
+Mounting holes\nfor mezzanine
 $Comp
 L Device:R_Small R?
 U 1 1 60E9290C
@@ -1498,4 +1402,48 @@ Text GLabel 4700 5750 0    50   Input ~ 0
 B13_L18_N
 Text GLabel 4700 6100 0    50   Input ~ 0
 B13_L18_P
+$Comp
+L Mechanical:MountingHole H5
+U 1 1 60EE52C3
+P 1350 6450
+F 0 "H5" H 1450 6496 50  0000 L CNN
+F 1 "Foot" H 1450 6405 50  0000 L CNN
+F 2 "proj_footprints:foot_ff-13" H 1350 6450 50  0001 C CNN
+F 3 "~" H 1350 6450 50  0001 C CNN
+	1    1350 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H6
+U 1 1 60EE550C
+P 1750 6450
+F 0 "H6" H 1850 6496 50  0000 L CNN
+F 1 "Foot" H 1850 6405 50  0000 L CNN
+F 2 "proj_footprints:foot_ff-13" H 1750 6450 50  0001 C CNN
+F 3 "~" H 1750 6450 50  0001 C CNN
+	1    1750 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H7
+U 1 1 60EE5653
+P 2150 6450
+F 0 "H7" H 2250 6496 50  0000 L CNN
+F 1 "Foot" H 2250 6405 50  0000 L CNN
+F 2 "proj_footprints:foot_ff-13" H 2150 6450 50  0001 C CNN
+F 3 "~" H 2150 6450 50  0001 C CNN
+	1    2150 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H8
+U 1 1 60EE5954
+P 2550 6450
+F 0 "H8" H 2650 6496 50  0000 L CNN
+F 1 "Foot" H 2650 6405 50  0000 L CNN
+F 2 "proj_footprints:foot_ff-13" H 2550 6450 50  0001 C CNN
+F 3 "~" H 2550 6450 50  0001 C CNN
+	1    2550 6450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
