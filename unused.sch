@@ -61,12 +61,8 @@ NoConn ~ 6200 1500
 NoConn ~ 6200 1600
 NoConn ~ 6200 2300
 NoConn ~ 6200 2400
-Text GLabel 2900 4450 0    50   Output ~ 0
-B13_L3_N
 Text GLabel 2900 4300 0    50   Output ~ 0
 B13_L5_P
-Text GLabel 2900 4200 0    50   Output ~ 0
-B13_L5_N
 Text GLabel 2900 3300 0    50   Output ~ 0
 B13_L9_P
 Text GLabel 2900 3200 0    50   Output ~ 0
@@ -95,8 +91,6 @@ Text GLabel 2900 1650 0    50   Output ~ 0
 B13_L13_N
 Text GLabel 2900 1550 0    50   Output ~ 0
 B13_L13_P
-Text GLabel 2900 4550 0    50   Output ~ 0
-B13_L3_P
 Wire Wire Line
 	2900 3200 3050 3200
 Wire Wire Line
@@ -114,13 +108,7 @@ Wire Wire Line
 Wire Wire Line
 	2900 4050 3050 4050
 Wire Wire Line
-	2900 4200 3050 4200
-Wire Wire Line
 	2900 4300 3050 4300
-Wire Wire Line
-	2900 4450 3050 4450
-Wire Wire Line
-	2900 4550 3050 4550
 Wire Wire Line
 	2900 2150 3050 2150
 Wire Wire Line
@@ -157,10 +145,7 @@ NoConn ~ 3050 3700
 NoConn ~ 3050 3800
 NoConn ~ 3050 3950
 NoConn ~ 3050 4050
-NoConn ~ 3050 4200
 NoConn ~ 3050 4300
-NoConn ~ 3050 4450
-NoConn ~ 3050 4550
 Text GLabel 1350 4150 2    50   Output ~ 0
 MGT_CLK0_N
 Text GLabel 1350 4050 2    50   Output ~ 0
