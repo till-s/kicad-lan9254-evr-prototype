@@ -361,21 +361,6 @@ Wire Wire Line
 	3500 7150 3550 7150
 Wire Wire Line
 	3550 7150 3550 7600
-$Comp
-L power:+3V3 #PWR?
-U 1 1 5C330733
-P 2750 6700
-AR Path="/5BE73D36/5C330733" Ref="#PWR?"  Part="1" 
-AR Path="/5C1147CA/5C330733" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 2750 6550 50  0001 C CNN
-F 1 "+3V3" H 2765 6873 50  0000 C CNN
-F 2 "" H 2750 6700 50  0001 C CNN
-F 3 "" H 2750 6700 50  0001 C CNN
-	1    2750 6700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2750 6700 2750 7050
 Wire Wire Line
 	2750 7050 2800 7050
 Wire Wire Line
@@ -840,19 +825,18 @@ F 5 "Hirose" H 2300 1700 50  0001 C CNN "Manufacturer"
 	-1   0    0    1   
 $EndComp
 $Comp
-L fmc:10uF_1210 C4
+L Device:C C4
 U 1 1 60D50F11
 P 3650 1250
 F 0 "C4" V 3398 1250 50  0000 C CNN
-F 1 "10uF_1210" V 3489 1250 50  0000 C CNN
-F 2 "Capacitor_SMD:C_1210_3225Metric" H 3688 1100 50  0001 C CNN
+F 1 "10u" V 3489 1250 50  0000 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 3688 1100 50  0000 C CNN
 F 3 "~" H 3650 1250 50  0001 C CNN
-F 4 "GRJ32ER71E106KE11L" H 3775 1450 50  0001 C CNN "Part"
-F 5 "Murata" H 3875 1550 50  0001 C CNN "Manufacturer"
+F 4 "CL31A106KPHNNNE" H 3775 1450 50  0001 C CNN "Part"
+F 5 "Samsung" H 3875 1550 50  0001 C CNN "Manufacturer"
 	1    3650 1250
 	0    1    1    0   
 $EndComp
-Connection ~ 3800 1250
 Wire Wire Line
 	3500 1250 3300 1250
 Connection ~ 3300 1250
@@ -1105,7 +1089,7 @@ U 1 1 60EF578E
 P 9800 3600
 F 0 "J5" H 9750 5267 50  0000 C CNN
 F 1 "0821-1X1T-43-F" H 9750 5176 50  0000 C CNN
-F 2 "BEL_0821-1X1T-43-F" H 9800 3600 50  0001 L BNN
+F 2 "proj_footprints:BEL_0821-1X1T-43-F" H 9800 3600 50  0001 L BNN
 F 3 "https://www.digikey.com/product-detail/en/bel-fuse-inc/0821-1X1T-43-F/507-1567-ND/2257870?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol" H 9800 3600 50  0001 L BNN
 F 4 "507-1567-ND" H 9800 3600 50  0001 L BNN "Field4"
 F 5 "None" H 9800 3600 50  0001 L BNN "Field5"
@@ -1296,4 +1280,37 @@ Text GLabel 8350 4600 0    50   Input ~ 0
 B13_L3_N
 Text GLabel 8350 4900 0    50   Input ~ 0
 B13_L5_N
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5C330733
+P 2750 6350
+AR Path="/5BE73D36/5C330733" Ref="#PWR?"  Part="1" 
+AR Path="/5C1147CA/5C330733" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2750 6200 50  0001 C CNN
+F 1 "+3V3" H 2765 6523 50  0000 C CNN
+F 2 "" H 2750 6350 50  0001 C CNN
+F 3 "" H 2750 6350 50  0001 C CNN
+	1    2750 6350
+	1    0    0    -1  
+$EndComp
+Text GLabel 1800 7050 0    50   Input ~ 0
+B13_L8_N
+Wire Wire Line
+	1800 7050 2750 7050
+Connection ~ 2750 7050
+$Comp
+L trigbox:R10k R?
+U 1 1 60F55A10
+P 2750 6450
+AR Path="/60DAA393/5C4CE703/60F55A10" Ref="R?"  Part="1" 
+AR Path="/5C1147CA/60F55A10" Ref="R13"  Part="1" 
+F 0 "R13" H 2809 6480 50  0000 L CNN
+F 1 "10k" H 2809 6404 30  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 2750 6450 50  0001 C CNN
+F 3 "~" H 2750 6450 50  0001 C CNN
+	1    2750 6450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 6550 2750 7050
 $EndSCHEMATC

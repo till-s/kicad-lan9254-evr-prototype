@@ -132,7 +132,7 @@ F 5 "Murata" V 2000 2700 50  0001 C CNN "Manufacturer"
 	0    1    -1   0   
 $EndComp
 $Comp
-L fmc:10uF_1210 C?
+L Device:C C?
 U 1 1 5BDFCC25
 P 2300 2850
 AR Path="/5BDFCC25" Ref="C?"  Part="1" 
@@ -141,11 +141,11 @@ AR Path="/5C130F99/5BDFCC25" Ref="C57"  Part="1"
 AR Path="/5C20D542/5BDFCC25" Ref="C63"  Part="1" 
 AR Path="/5C210D20/5BDFCC25" Ref="C69"  Part="1" 
 F 0 "C57" H 2415 2896 50  0000 L CNN
-F 1 "10uF_1210" H 2415 2805 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1210_3225Metric" H 2338 2700 50  0001 C CNN
+F 1 "10u" H 2415 2805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 2338 2700 50  0001 C CNN
 F 3 "~" H 2300 2850 50  0001 C CNN
-F 4 "Murata" H 0   0   50  0001 C CNN "Manufacturer"
-F 5 "GRJ32ER71E106KE11L" H 0   0   50  0001 C CNN "Part"
+F 4 "Samsung" H 0   0   50  0001 C CNN "Manufacturer"
+F 5 "CL31A106KPHNNNE" H 0   0   50  0001 C CNN "Part"
 	1    2300 2850
 	-1   0    0    -1  
 $EndComp
@@ -259,7 +259,7 @@ F 5 "Murata" V 4650 2700 50  0001 C CNN "Manufacturer"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L fmc:10uF_1210 C?
+L Device:C C?
 U 1 1 5BDFCC5D
 P 4350 2850
 AR Path="/5BDFCC5D" Ref="C?"  Part="1" 
@@ -268,11 +268,11 @@ AR Path="/5C130F99/5BDFCC5D" Ref="C60"  Part="1"
 AR Path="/5C20D542/5BDFCC5D" Ref="C66"  Part="1" 
 AR Path="/5C210D20/5BDFCC5D" Ref="C72"  Part="1" 
 F 0 "C60" H 4465 2896 50  0000 L CNN
-F 1 "10uF_1210" H 4465 2805 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1210_3225Metric" H 4388 2700 50  0001 C CNN
+F 1 "10u" H 4465 2805 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 4388 2700 50  0001 C CNN
 F 3 "~" H 4350 2850 50  0001 C CNN
-F 4 "Murata" H 0   0   50  0001 C CNN "Manufacturer"
-F 5 "GRJ32ER71E106KE11L" H 0   0   50  0001 C CNN "Part"
+F 4 "Samsung" H 0   0   50  0001 C CNN "Manufacturer"
+F 5 "CL31A106KPHNNNE" H 0   0   50  0001 C CNN "Part"
 	1    4350 2850
 	1    0    0    -1  
 $EndComp

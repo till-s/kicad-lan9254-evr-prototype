@@ -287,8 +287,6 @@ Text GLabel 4600 6100 0    50   Input ~ 0
 B13_L7_N
 Text GLabel 6000 5850 2    50   Output ~ 0
 B13_L8_P
-Text GLabel 6000 5750 2    50   Output ~ 0
-B13_L8_N
 Text GLabel 6000 6700 2    50   Output ~ 0
 B13_L10_P
 Text GLabel 4600 7150 0    50   Input ~ 0
@@ -301,8 +299,6 @@ Wire Wire Line
 	4600 6100 4700 6100
 Wire Wire Line
 	5800 5650 6000 5650
-Wire Wire Line
-	5800 5750 6000 5750
 Wire Wire Line
 	5800 5850 6000 5850
 Wire Wire Line
@@ -335,6 +331,5 @@ NoConn ~ 5800 6700
 NoConn ~ 5800 6800
 NoConn ~ 5800 6900
 NoConn ~ 5800 5850
-NoConn ~ 5800 5750
 NoConn ~ 5800 5650
 $EndSCHEMATC
