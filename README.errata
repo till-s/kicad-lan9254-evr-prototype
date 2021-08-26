@@ -1,0 +1,9 @@
+ - use bigger EEPROM (1kbit far too small)
+ - LED drivers are open-source/open-drain; must make sure
+   proper pulldowns are present on LVC driver inputs!
+   Either:
+     - pull-down higher impedance than internal pull-up
+     - pull-down in addition to lower impedance external pull-up 
+     - pull-down only activated after lan9254 comes out of config
+       (e.g., driven by FPGA pins).
+   
