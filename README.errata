@@ -6,4 +6,7 @@
      - pull-down in addition to lower impedance external pull-up 
      - pull-down only activated after lan9254 comes out of config
        (e.g., driven by FPGA pins).
+    => same problem for EEPROM_EMU_ALELO_POL; internal pull-up is
+       too weak, it seems. The correct value is not latched after reset.
    
+ - Silkscreen: label JTAG pins
