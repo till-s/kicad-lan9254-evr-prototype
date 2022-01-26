@@ -1,12 +1,49 @@
  - use bigger EEPROM (1kbit far too small)
  - LED drivers are open-source/open-drain; must make sure
    proper pulldowns are present on LVC driver inputs!
+   This may be a problem if the required polarity is
+   the inverse of the strap-indicated polarity:
+   E.g., if the led driver is active-high and a
+   pull-up resistor is installed. If we re-program the
+   9254's LED driver to be active-high then we'll end
+   up with a open-source output in parallel with the
+   pull-up and the LED will always be active.
    Either:
-     - pull-down higher impedance than internal pull-up
-     - pull-down in addition to lower impedance external pull-up 
+     - pull-down higher impedance than internal pull-up (not sure
+       this works; would require the internal pull-up to be deactivated
+       after configuration).
+     - pull-down in addition to lower impedance external pull-up
+     - XOR driver
+
+                                                 _|_
+                                                 \ /  LED
+        strap to GND or Vcc                      _v_
+           |                      -----------     |
+           |                      |               |
+           |----------------------|          ||---|
+           |                      | XNOR  ---||
+           ---[ pull-up/down ]----|          ||---|
+                               |  |               |
+                               |  -----------    ---
+                               |
+                               v
+                            LAN9254 LED driver out
+
+
      - pull-down only activated after lan9254 comes out of config
        (e.g., driven by FPGA pins).
     => same problem for EEPROM_EMU_ALELO_POL; internal pull-up is
        too weak, it seems. The correct value is not latched after reset.
-   
+       UPDATE: it is not the pull-up. Vivado bug ignored high-Z slv
+               initialization!
+
  - Silkscreen: label JTAG pins
+ - I2C/eeprom access from fpga
+ - remote reset of lan9254 (pulsed?) to reload eeprom
+ - write-protect eeprom
+ - remote-flash
+ - route eeprom-emul pins (e2psize! and maybe others) to fpga
+ - diag USB port ?
+ - route PME / WoL pin (=> impossible; not a dedicated pin;
+   SW mapped to errled/sync...)
+ - POF outputs for pattern board?
