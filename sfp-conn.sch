@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 4 12
+Sheet 3 18
 Title "Timing FMC"
 Date "2018-11-01"
 Rev "0.0"
@@ -417,7 +417,7 @@ Wire Wire Line
 Wire Wire Line
 	3200 2700 2900 2700
 Connection ~ 2550 2700
-Text HLabel 3350 4300 0    50   Output ~ 0
+Text HLabel 3350 4400 0    50   Output ~ 0
 SFP_RX_P
 Text HLabel 3350 4550 0    50   Input ~ 0
 SFP_TX_P
@@ -558,7 +558,7 @@ Wire Wire Line
 	5550 5400 5450 5400
 Connection ~ 5550 5400
 Connection ~ 5450 5400
-Text HLabel 3350 4400 0    50   Output ~ 0
+Text HLabel 3350 4300 0    50   Output ~ 0
 SFP_RX_N
 Text HLabel 8350 4600 2    50   Output ~ 0
 TX_FAULT
