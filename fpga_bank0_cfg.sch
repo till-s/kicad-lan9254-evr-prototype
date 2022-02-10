@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 11 18
+Sheet 10 18
 Title ""
 Date ""
 Rev ""
@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L FPGA_Xilinx_Artix7:XC7A35T-CSG325 U1
+L fmc:XC7A35T-CSG325 U1
 U 5 1 62263CAE
 P 2700 3000
 F 0 "U1" H 1420 3053 50  0000 R CNN
@@ -152,25 +152,8 @@ Wire Wire Line
 Connection ~ 4200 4000
 Wire Wire Line
 	4200 4000 4200 4100
-$Comp
-L Device:R_Small R2
-U 1 1 622E8D22
-P 4450 2700
-AR Path="/620D1E32/622637A6/622E8D22" Ref="R2"  Part="1" 
-AR Path="/620D1E32/622D3D90/622E8D22" Ref="R?"  Part="1" 
-F 0 "R2" V 4400 2850 50  0000 C CNN
-F 1 "50" V 4400 3150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 4450 2700 50  0001 C CNN
-F 3 "~" H 4450 2700 50  0001 C CNN
-	1    4450 2700
-	0    1    1    0   
-$EndComp
 Text HLabel 5050 2700 2    50   Output ~ 0
 CCLK
-Wire Wire Line
-	4200 2700 4350 2700
-Wire Wire Line
-	4550 2700 5050 2700
 Wire Wire Line
 	4200 2900 4750 2900
 Wire Wire Line
@@ -370,4 +353,6 @@ Wire Wire Line
 	4200 3200 5600 3200
 Wire Wire Line
 	5600 3200 5600 2950
+Wire Wire Line
+	4200 2700 5050 2700
 $EndSCHEMATC

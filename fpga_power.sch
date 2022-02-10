@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 10 18
+Sheet 4 18
 Title ""
 Date ""
 Rev ""
@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L FPGA_Xilinx_Artix7:XC7A35T-CSG325 U1
+L fmc:XC7A35T-CSG325 U1
 U 6 1 620D2B05
 P 3250 4000
 F 0 "U1" H 3250 7067 50  0000 C CNN
@@ -25,7 +25,7 @@ F 3 "" H 3250 4000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L FPGA_Xilinx_Artix7:XC7A35T-CSG325 U1
+L fmc:XC7A35T-CSG325 U1
 U 4 1 620DFECC
 P 7250 5100
 F 0 "U1" H 7250 5667 50  0000 C CNN

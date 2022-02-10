@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 13 18
+Sheet 7 18
 Title ""
 Date ""
 Rev ""
@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L FPGA_Xilinx_Artix7:XC7A35T-CSG325 U1
+L fmc:XC7A35T-CSG325 U1
 U 1 1 622D4082
 P 4150 4050
 F 0 "U1" H 4150 1075 50  0000 C CNN
@@ -845,4 +845,42 @@ F 3 "~" H 1550 900 50  0001 C CNN
 	1    1550 900 
 	-1   0    0    -1  
 $EndComp
+$Comp
+L Device:C_Small C86
+U 1 1 621FD204
+P 9550 2550
+F 0 "C86" H 9642 2596 50  0000 L CNN
+F 1 "100n" H 9642 2505 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 9550 2550 50  0001 C CNN
+F 3 "~" H 9550 2550 50  0001 C CNN
+	1    9550 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 621FD7D4
+P 9550 2650
+AR Path="/5C114F28/5C114F4B/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/5C114F28/5C1157BA/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/5C439C1E/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/5C439C2E/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/5C439C1E/5C801264/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/5C439C1E/5C83CE66/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/5C439C2E/5C801264/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/5C439C2E/5C83CE66/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/5C439C1E/5C847C02/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/5C439C2E/5C847C02/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/620D1E32/620D23E9/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/620D1E32/622637A6/621FD7D4" Ref="#PWR?"  Part="1" 
+AR Path="/620D1E32/622D3D90/621FD7D4" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9550 2400 50  0001 C CNN
+F 1 "GND" H 9555 2477 50  0000 C CNN
+F 2 "" H 9550 2650 50  0001 C CNN
+F 3 "" H 9550 2650 50  0001 C CNN
+	1    9550 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9550 2450 9150 2450
 $EndSCHEMATC
