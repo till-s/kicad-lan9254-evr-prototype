@@ -364,7 +364,7 @@ Wire Wire Line
 Connection ~ 7750 5200
 Wire Wire Line
 	7750 5200 7900 5200
-Text GLabel 1700 2050 2    50   BiDi ~ 0
+Text GLabel 2050 2050 2    50   BiDi ~ 0
 IO_L11P_T1_SRCC_15
 Text GLabel 7700 6050 0    50   BiDi ~ 0
 IO_L12P_T1_MRCC_15
@@ -588,8 +588,6 @@ Text GLabel 1700 4500 2    50   BiDi ~ 0
 IO_L9N_T1_DQS_34
 Text GLabel 1700 4800 2    50   BiDi ~ 0
 IO_L12N_T1_MRCC_34
-Text GLabel 1700 5300 2    50   BiDi ~ 0
-IO_L12P_T1_MRCC_34
 Text GLabel 1700 4900 2    50   BiDi ~ 0
 IO_L13N_T2_MRCC_34
 Text GLabel 1700 4600 2    50   BiDi ~ 0
@@ -741,7 +739,7 @@ $EndSheet
 Text GLabel 7700 6200 0    50   BiDi ~ 0
 IO_25_14
 Wire Wire Line
-	1600 2050 1700 2050
+	1600 2050 2050 2050
 Wire Wire Line
 	1600 1050 1750 1050
 Wire Wire Line
@@ -804,4 +802,8 @@ Wire Wire Line
 	4150 3900 4250 3900
 Wire Wire Line
 	4150 4000 4250 4000
+Text GLabel 1700 5300 2    50   BiDi ~ 0
+IO_L17P_T2_34
+Text Label 1700 2050 0    50   ~ 0
+CLK_FOO
 $EndSCHEMATC

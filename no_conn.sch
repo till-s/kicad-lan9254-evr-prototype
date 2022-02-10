@@ -49,8 +49,6 @@ Text GLabel 9750 5150 2    50   BiDi ~ 0
 IO_L21P_T3_DQS_34
 Text GLabel 9750 4450 2    50   BiDi ~ 0
 IO_L17N_T2_34
-Text GLabel 9750 4350 2    50   BiDi ~ 0
-IO_L17P_T2_34
 Text GLabel 9750 5250 2    50   BiDi ~ 0
 IO_L21N_T3_DQS_34
 Text GLabel 9750 5550 2    50   BiDi ~ 0
@@ -70,7 +68,7 @@ NoConn ~ 9750 2550
 NoConn ~ 9750 2650
 NoConn ~ 9750 2950
 NoConn ~ 9750 3050
-NoConn ~ 9750 4350
+NoConn ~ 9750 3350
 NoConn ~ 9750 4450
 NoConn ~ 9750 4750
 NoConn ~ 9750 4850
@@ -179,4 +177,6 @@ NoConn ~ 3250 5800
 NoConn ~ 3250 5900
 Text GLabel 9750 1850 2    50   BiDi ~ 0
 IO_L4N_T0_34
+Text GLabel 9750 3350 2    50   BiDi ~ 0
+IO_L12P_T1_MRCC_34
 $EndSCHEMATC
