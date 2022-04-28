@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 18
+Sheet 3 20
 Title ""
 Date ""
 Rev ""
@@ -29,6 +29,8 @@ F0 "fpga_bank0_cfg" 50
 F1 "fpga_bank0_cfg.sch" 50
 F2 "AGND" I R 3250 2050 50 
 F3 "CCLK" O R 3250 2250 50 
+F4 "DONE" O R 3250 2450 50 
+F5 "VCCO_0" O R 3250 2600 50 
 $EndSheet
 Wire Wire Line
 	3250 1500 3300 1500
@@ -65,4 +67,12 @@ F1 "fpga_bank34.sch" 50
 $EndSheet
 Wire Wire Line
 	3250 2250 5150 2250
+Text HLabel 3550 2450 2    50   Output ~ 0
+DONE
+Text HLabel 3550 2600 2    50   Output ~ 0
+VCCO_0
+Wire Wire Line
+	3550 2450 3250 2450
+Wire Wire Line
+	3250 2600 3550 2600
 $EndSCHEMATC
