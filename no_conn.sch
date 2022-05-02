@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 10 20
+Sheet 10 21
 Title ""
 Date ""
 Rev ""
@@ -133,12 +133,8 @@ Text GLabel 3250 4900 2    50   BiDi ~ 0
 IO_L19N_T3_A09_D25_VREF_14
 Text GLabel 3250 3600 2    50   BiDi ~ 0
 IO_L13P_T2_MRCC_14
-Text GLabel 3250 4400 2    50   BiDi ~ 0
-IO_L17P_T2_A14_D30_14
 Text GLabel 3250 5800 2    50   BiDi ~ 0
 IO_L24P_T3_A01_D17_14
-Text GLabel 3250 5100 2    50   BiDi ~ 0
-IO_L20N_T3_A07_D23_14
 Text GLabel 3250 5900 2    50   BiDi ~ 0
 IO_L24N_T3_A00_D16_14
 NoConn ~ 3250 1100
@@ -222,28 +218,6 @@ F 3 "~" H 3300 4900 50  0001 C CNN
 	1    3100 4900
 	0    -1   1    0   
 $EndComp
-$Comp
-L Connector:TestPoint_Small TP5
-U 1 1 628A1759
-P 3100 4400
-F 0 "TP5" V 3100 4600 50  0000 C CNN
-F 1 "Dummy End" H 3148 4355 50  0001 L CNN
-F 2 "proj_footprints:endpoint_0.1mm" H 3300 4400 50  0001 C CNN
-F 3 "~" H 3300 4400 50  0001 C CNN
-	1    3100 4400
-	0    -1   1    0   
-$EndComp
-$Comp
-L Connector:TestPoint_Small TP8
-U 1 1 628A1A9D
-P 3100 5100
-F 0 "TP8" V 3100 5300 50  0000 C CNN
-F 1 "Dummy End" H 3148 5055 50  0001 L CNN
-F 2 "proj_footprints:endpoint_0.1mm" H 3300 5100 50  0001 C CNN
-F 3 "~" H 3300 5100 50  0001 C CNN
-	1    3100 5100
-	0    -1   1    0   
-$EndComp
 Text GLabel 3250 5000 2    50   BiDi ~ 0
 IO_L20P_T3_A08_D24_14
 $Comp
@@ -310,13 +284,9 @@ Wire Wire Line
 Wire Wire Line
 	9600 5350 9750 5350
 Wire Wire Line
-	3100 4400 3250 4400
-Wire Wire Line
 	3100 4900 3250 4900
 Wire Wire Line
 	3100 5000 3250 5000
-Wire Wire Line
-	3100 5100 3250 5100
 Text Notes 4250 7000 0    50   ~ 0
 Testpoints on this page are\npins that are currently unused\nbut have been routed to the\nedge of the FPGA.
 Text GLabel 2300 2400 0    50   BiDi ~ 0
