@@ -14,6 +14,8 @@ drives a twin RJ-45 fast-ethernet connector (EtherCat bus).
 ## Hardware Features
 The board hosts the following hardware:
 
+![Block Diagram](block_diag.png)
+
   - Artix-7 FPGA (xc7a35; note that this was the only device I could
     actually buy in 2022. Was able to secure the last 2 (!) chips from
     Mouser.
