@@ -1,0 +1,20 @@
+I haven't found two impedance calculators (jlcpcb, kicad, eurocircuits, internet)
+which yields similar results for the same er/w/s/h/t settings :-(.
+
+jlcpcb's impedance calculator (on their 2113 substrate)
+
+ 50Ohm, single-ended : 0.147mm
+ 100Ohm, differential: 5mil (0.127) spacing, 4mil width (0.102mm)
+
+eurocircuits:
+ 50Ohm, single-ended : 0.182mm
+ 100Ohm, differential: 0.112mm spacing, 0.116mm width
+
+The values for diff-lines were chosen so that they meet min.
+clearance/trace width for both companies and the diff-line's
+center-center distances (s + 2*w/2) are identical.
+
+ 1. Route everything for eurocity (wider for SE and DIFF)
+ 2. When submitting to JLC we can just reduce the width
+    of the tracks; create respective net classes for the purpose.
+
