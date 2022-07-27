@@ -1,49 +1,15 @@
- - use bigger EEPROM (1kbit far too small)
- - LED drivers are open-source/open-drain; must make sure
-   proper pulldowns are present on LVC driver inputs!
-   This may be a problem if the required polarity is
-   the inverse of the strap-indicated polarity:
-   E.g., if the led driver is active-high and a
-   pull-up resistor is installed. If we re-program the
-   9254's LED driver to be active-high then we'll end
-   up with a open-source output in parallel with the
-   pull-up and the LED will always be active.
-   Either:
-     - pull-down higher impedance than internal pull-up (not sure
-       this works; would require the internal pull-up to be deactivated
-       after configuration).
-     - pull-down in addition to lower impedance external pull-up
-     - XOR driver
+Errata on Zynq Development-board:
+NOTE: ALL FIXED by proto-1
 
-                                                 _|_
-                                                 \ /  LED
-        strap to GND or Vcc                      _v_
-           |                      -----------     |
-           |                      |               |
-           |----------------------|          ||---|
-           |                      | XNOR  ---||
-           ---[ pull-up/down ]----|          ||---|
-                               |  |               |
-                               |  -----------    ---
-                               |
-                               v
-                            LAN9254 LED driver out
-
-
-     - pull-down only activated after lan9254 comes out of config
-       (e.g., driven by FPGA pins).
-    => same problem for EEPROM_EMU_ALELO_POL; internal pull-up is
-       too weak, it seems. The correct value is not latched after reset.
-       UPDATE: it is not the pull-up. Vivado bug ignored high-Z slv
-               initialization!
-
- - Silkscreen: label JTAG pins
- - I2C/eeprom access from fpga
- - remote reset of lan9254 (pulsed?) to reload eeprom
- - write-protect eeprom
- - remote-flash
- - route eeprom-emul pins (e2psize! and maybe others) to fpga
- - diag USB port ?
- - route PME / WoL pin (=> impossible; not a dedicated pin;
-   SW mapped to errled/sync...)
- - POF outputs for pattern board?
+PROTO-1
+=======
+ - 10k pull-downs are not enough to overcome internal pull-up
+   (datasheet: Ipu@1.8V min: 35uA, max 220uA)
+   => max 1.8k pull-down
+ - Reduced R79 from 10k to 1k (fpga pullup too strong)
+ - R66 has the same problem (OUT0_SEL_I2Cb); i2c not selected
+   (tested with PUDCb)
+   => reduced to 1k5
+ - solder-jumpers behind voltage controllers so that correct
+   voltages may be checked before connecting the rest of the
+   electronics. 
