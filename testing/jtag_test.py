@@ -828,6 +828,57 @@ class Chn:
       dat <<= 1
     self.urc_.shift_dr()
     return dou
+
+  def _spiShiftAddr(self, addr):
+    self.spiFlashShift8( (addr >> 16) & 0xff )
+    self.spiFlashShift8( (addr >>  8) & 0xff )
+    self.spiFlashShift8( (addr >>  0) & 0xff )
+
+  def spiFlashRead(self, addr, nBytes):
+    self.spiFlashCSLo()
+    self.spiFlashShift8(0x03)
+    self._spiShiftAddr(addr)
+    rv = []
+    for i in range(nBytes):
+      rv.append( self.spiFlashShift8( 0xff ) )
+    self.spiFlashCSHi()
+    return rv
+
+  def spiFlashWren(self):
+    self.spiFlashCSLo()
+    self.spiFlashShift8(0x06)
+    self.spiFlashCSHi()
+
+  def spiFlashReadStatus(self):
+    self.spiFlashCSLo()
+    self.spiFlashShift8(0x05)
+    rv = self.spiFlashShift8(0xff)
+    self.spiFlashCSHi()
+    return rv
+
+  def spiFlashEraseBlock(self, addr):
+    if ( (addr & 0xffff) != 0 ):
+      raise RuntimeError("address not erase-block-aligned (64k)")
+    self.spiFlashWren()
+    self.spiFlashCSLo()
+    self.spiFlashShift8(0xD8)
+    self._spiShiftAddr(addr)
+    self.spiFlashCSHi()
+    return self.spiFlashReadStatus()
+
+  def spiFlashWrite(self, addr, d):
+    if ( len(d) > 255 ):
+      raise RuntimeError("Only writes < 1 page supported ATM")
+    if ( (addr & 0xff) != 0 ):
+      raise RuntimeError("address not page-aligned (512b)")
+    d = bytearray(d)
+    self.spiFlashWren()
+    self.spiFlashCSLo()
+    self.spiFlashShift8(0x02)
+    self._spiShiftAddr(addr)
+    for x in d:
+      self.spiFlashShift8(x)
+    self.spiFlashCSHi()
      
   def checkSpiFlash(self):
     # without CS nothing must happen
