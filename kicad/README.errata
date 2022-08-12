@@ -13,3 +13,7 @@ PROTO-1
  - solder-jumpers behind voltage controllers so that correct
    voltages may be checked before connecting the rest of the
    electronics. 
+ - maybe add external pulldown for WAIT_ACK, pullups for J7/J8.
+   Forgetting to add (also: very weak) pulldown in XDC caused
+   major debugging headache.
+ - holes for LEMO connectors are too small
