@@ -158,6 +158,33 @@ class Chn:
     43
   ]
 
+  LAN_HBI_AD_IDXS = [
+    10,
+     5,
+     4,
+    34,
+    39,
+    40,
+    35,
+    36,
+    37,
+    15,
+    18,
+    17,
+    16,
+     9,
+     8,
+    27
+  ]
+
+  LAN_HBI_BE0_IDX   = 20
+  LAN_HBI_BE1_IDX   = 21
+  LAN_HBI_RD_IDX    = 25
+  LAN_HBI_WR_IDX    = 24
+  LAN_HBI_CS_IDX    = 22
+  LAN_HBI_WA_IDX    = 0
+  LAN_HBI_ALELO_IDX = 19
+
   LED_PINS = [
     'IO_K2',
     'IO_K1',
@@ -562,6 +589,9 @@ class Chn:
         raise RuntimeError("eepWrite: data not ACKed")
     self.i2cStop( idx )
 
+  def eepBlank(self, eepSize = 2048, i2cAddr = 0x50, idx = 0):
+    self.eepWrite( [0xff for i in range(eepSize)], i2cAddr = i2cAddr, idx = idx ) 
+
   @staticmethod
   def crc8byte(crc, dat):
     rem = dat ^ crc
@@ -584,6 +614,7 @@ class Chn:
   def mkImage(dat):
     if len(dat) != 14:
       raise RuntimeError("Basic eeprom image must have 14 bytes")
+    dat = dat.copy()
     dat.extend([Chn.crc8(dat), 0])
     return dat
 
@@ -610,18 +641,32 @@ class Chn:
 
   def checkLanFpga(self):
     print("To check the LAN9254 <-> FPGA connections without LAN JTAG")
-    print("  1. disable EEPROM (SW2101, pos 'I' ON)")
-    print("  2. run checkLanShorts()")
-    print("  3. burn DIGIO_INP_IMAGE to EEPROM")
-    print("  4. enable EEPROM")
-    print("  5. run lanReset() and verify that RESET worked")
-    print("  6. run checkLanDigio()")
-    print("  7. burn DIGIO_TST_IMAGE to EEPROM")
-    print("  8. run lanReset()")
-    print("  9. run checkLanMisc()")
-    print(" 10. re-burn original or DIGIO_INP_IMAGE into EEPROM")
-    print(" 11. run lanRest()")
+    print("MAKE SURE EEPROM IS BLANK FIRST AND MAKE A BACKUP (sii_read)")
+    print("  1. disable EEPROM (SW2101, pos 'I' ON); disable ALELO_POL (pos 'A' OFF)")
+    print("  2. reset lan (lanReset())")
+    print("  3. run checkLanShorts()")
+    print("  4. burn DIGIO_INP_IMAGE to EEPROM; you can use 'sii_write' but you MUST")
+    print("     use '-f' to force writing the blank areas. It is *not* enough to just")
+    print("     write the first 16-bytes with the DIGIO signature!")
+    print("     => use 'burnInpImage()'")
+    print("  5. enable EEPROM")
+    print("  6. run lanReset() and verify that RESET worked")
+    print("  7. run checkLanDigio()")
+    print("  8. burn DIGIO_TST_IMAGE to EEPROM (=> 'burnTstImage()')")
+    print("  9. run lanReset()")
+    print(" 10. run checkLanMisc()")
+    print(" 11. re-burn original or DIGIO_INP_IMAGE into EEPROM")
+    print(" 10. run lanReset()")
+    print(" 11. restore ALELO_POL setting and original EEPROM contents!")
     raise RuntimeError("LAN - FPGA connections NOT TESTED")
+
+  def burnInpImage(self):
+    print("Make sure the rest of the EEPROM is blank!")
+    self.eepWrite( self.mkImage( self.DIGIO_INP_IMAGE ) )
+
+  def burnTstImage(self):
+    print("Make sure the rest of the EEPROM is blank!")
+    self.eepWrite( self.mkImage( self.DIGIO_TST_IMAGE ) )
 
   def lanSetAllInp(self):
     for p in self.LAN_IO_PINS:
@@ -629,7 +674,9 @@ class Chn:
     self.urc_.shift_dr()
 
   def checkLanShorts(self, eepInvalid=True):
-    print("Do this test with invalid/no EEPROM")
+    print("Do this test with invalid/no EEPROM; jumper 'I' ON, jumper 'A' OFF")
+    print("Press a Key to proceed")
+    getyN('')
     self.lanSetAllInp()
     # filter 'known' pins
     testPins = []
@@ -713,6 +760,94 @@ class Chn:
     self.urc_.set_signal( pin )
     self.urc_.shift_dr()
     return pin
+
+  def lanHbiInit(self):
+    self.lanSetAllInp()
+    for i in self.LAN_HBI_BE0_IDX, self.LAN_HBI_BE1_IDX, self.LAN_HBI_RD_IDX, self.LAN_HBI_WR_IDX, self.LAN_HBI_CS_IDX, self.LAN_HBI_ALELO_IDX: 
+      self.urc_.set_signal( self.LAN_IO_PINS[i], 1 )
+    self.urc_.shift_dr()
+
+  def _hbiSetAD(self, x = None):
+    if ( x is None ):
+      for i in range(16):
+        self.urc_.set_signal( self.LAN_IO_PINS[ self.LAN_HBI_AD_IDXS[ i ] ] )
+    else:
+      m = 1
+      for i in range(16):
+        self.urc_.set_signal( self.LAN_IO_PINS[ self.LAN_HBI_AD_IDXS[ i ] ], int( (x & m) != 0 ) ) 
+        m <<= 1
+
+  def _hbiGetAD(self):
+    v = 0
+    m = 1
+    for i in range(16):
+      if ( self.urc_.get_signal( self.LAN_IO_PINS[ self.LAN_HBI_AD_IDXS[ i ] ] ) != 0 ):
+        v |= m
+      m <<= 1
+    return v
+
+  def lanHbiAddr(self, wa):
+    if ( wa & 1 != 0 ):
+      raise RuntimeError("Need a word-aligned address")
+    self._hbiSetAD( wa >> 1 )
+    self.urc_.set_signal( self.LAN_IO_PINS[ self.LAN_HBI_CS_IDX ],    0 )
+    self.urc_.set_signal( self.LAN_IO_PINS[ self.LAN_HBI_ALELO_IDX ], 0 )
+    self.urc_.shift_dr()
+    self.urc_.set_signal( self.LAN_IO_PINS[ self.LAN_HBI_ALELO_IDX ], 1 )
+    self.urc_.shift_dr()
+    self._hbiSetAD()
+    self.urc_.shift_dr()
+
+  def _hbiSetBE(self, v):
+    self.urc_.set_signal( self.LAN_IO_PINS[ self.LAN_HBI_BE0_IDX ], int( (v & 1) != 0) )
+    self.urc_.set_signal( self.LAN_IO_PINS[ self.LAN_HBI_BE1_IDX ], int( (v & 2) != 0) )
+
+  def _hbiSetRD(self, v):
+    self.urc_.set_signal( self.LAN_IO_PINS[ self.LAN_HBI_RD_IDX ], v )
+
+  def _hbiSetWR(self, v):
+    self.urc_.set_signal( self.LAN_IO_PINS[ self.LAN_HBI_WR_IDX ], v )
+    
+
+  def lanHbiIo16(self, wa, dat=None):
+    self.lanHbiAddr(wa)
+    self._hbiSetBE( 0 )
+    if ( dat is None ):
+      self._hbiSetRD( 0 )
+    else:
+      self._hbiSetWR( 0 )
+      self._hbiSetAD( dat )
+    self.urc_.shift_dr()
+    self.urc_.shift_dr()
+    rv = self._hbiGetAD()
+    if ( not dat is None ):
+      self._hbiSetWR( 1 )
+      self.urc_.shift_dr()
+    self._hbiSetRD( 1 )
+    self._hbiSetBE( 3 )
+    self._hbiSetAD()
+    self.urc_.shift_dr()
+    return rv
+
+  def lanHbiRead16(self, wa):
+    return self.lanHbiIo16( wa )
+
+  def lanHbiRead32(self, dwa):
+    if ( ( dwa & 3 ) != 0 ):
+      raise RuntimeError("Double-word address misaligned")
+    rv  = self.lanHbiRead16( dwa ) 
+    rv |= (self.lanHbiRead16( dwa + 2 ) << 16)
+    return rv
+
+  def lanHbiWrite16(self, wa, v):
+    rv = self.lanHbiIo16( wa, ( v & 0xffff ) )
+    print("Write16: 0x{:04x}".format(rv))
+
+  def lanHbiWrite32(self, dwa, v):
+    if ( ( dwa & 3 ) != 0 ):
+      raise RuntimeError("Double-word address misaligned")
+    self.lanHbiWrite16( dwa + 0, v )
+    self.lanHbiWrite16( dwa + 2, (v >> 16) )
 
   # check LATCH_IN and OE_EXT connections
   def checkLanMisc(self):
@@ -849,12 +984,32 @@ class Chn:
     self.spiFlashShift8(0x06)
     self.spiFlashCSHi()
 
-  def spiFlashReadStatus(self):
+  def spiFlashVolatileWren(self):
     self.spiFlashCSLo()
-    self.spiFlashShift8(0x05)
+    self.spiFlashShift8(0x50)
+    self.spiFlashCSHi()
+
+  def spiFlashReadStatus(self, reg=1):
+    if not reg in [1,2,3]:
+      raise RuntimeError("Invalid spi status register (1..3)")
+    cmd = [0x05, 0x35, 0x15]
+    self.spiFlashCSLo()
+    self.spiFlashShift8(cmd[reg-1])
     rv = self.spiFlashShift8(0xff)
     self.spiFlashCSHi()
     return rv
+
+  def spiFlashSetWPS(self, val):
+    v = self.spiFlashReadStatus(3)
+    if ( val ):
+      v |= 4
+    else:
+      v &= 0xFB
+    self.spiFlashVolatileWren()
+    self.spiFlashCSLo()
+    self.spiFlashShift8(0x11)
+    self.spiFlashShift8(   v)
+    self.spiFlashCSHi()
 
   def spiFlashEraseBlock(self, addr):
     if ( (addr & 0xffff) != 0 ):
@@ -865,6 +1020,14 @@ class Chn:
     self._spiShiftAddr(addr)
     self.spiFlashCSHi()
     return self.spiFlashReadStatus()
+
+  def spiFlashEraseChip(self):
+    #self.spiFlashWren()
+    self.spiFlashCSLo()
+    self.spiFlashShift8(0xC7)
+    self.spiFlashCSHi()
+    return self.spiFlashReadStatus()
+
 
   def spiFlashWrite(self, addr, d):
     if ( len(d) > 255 ):
@@ -913,4 +1076,3 @@ fld=[]
 #fld.append( chn.checkLeds() )
 #fld.append( chn.checkPOF() )
 #fld.append( chn.checkGPIO() )
-
