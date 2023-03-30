@@ -1,3 +1,4 @@
 (fp_lib_table
-  (lib (name conn-sfp)(type KiCad)(uri /home/till/kicad/agilack/contrib-kicad_parts/conn-sfp)(options "")(descr ""))
+  (lib (name "conn-sfp")(type "KiCad")(uri "/home/till/kicad/agilack/contrib-kicad_parts/conn-sfp")(options "")(descr ""))
+  (lib (name "proj_footprints")(type "KiCad")(uri "/home/till/kicad/libs/proj_footprints.pretty")(options "")(descr ""))
 )
