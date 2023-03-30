@@ -1144,6 +1144,7 @@
     )
   )
 
+
   (junction (at 119.38 39.37) (diameter 0) (color 0 0 0 0)
     (uuid 0ebb4ecc-34ba-4479-833b-9a9dfeb984b2)
   )
@@ -1221,9 +1222,6 @@
   )
   (junction (at 119.38 46.99) (diameter 0) (color 0 0 0 0)
     (uuid d0651d52-e5ad-4308-8c71-4ff5abd016ef)
-  )
-  (junction (at 241.3 46.99) (diameter 0) (color 0 0 0 0)
-    (uuid d17ee948-5b66-4344-8fe5-1fa3fe78c0fc)
   )
   (junction (at 119.38 85.09) (diameter 0) (color 0 0 0 0)
     (uuid dcbc1580-b1ba-4da4-a82c-cbfeca39bc74)
@@ -1405,10 +1403,6 @@
   (wire (pts (xy 49.53 62.23) (xy 66.04 62.23))
     (stroke (width 0) (type default))
     (uuid 73b425f8-9c01-4db5-9b7f-366f3becdee6)
-  )
-  (wire (pts (xy 241.3 46.99) (xy 251.46 46.99))
-    (stroke (width 0) (type default))
-    (uuid 75a05569-5ddb-4415-9c31-51010561a566)
   )
   (wire (pts (xy 104.14 148.59) (xy 106.68 148.59))
     (stroke (width 0) (type default))
@@ -2849,31 +2843,6 @@
     )
   )
 
-  (symbol (lib_id "power:PWR_FLAG") (at 251.46 46.99 0) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 290047dd-345e-41ef-8353-7b63dd49512f)
-    (property "Reference" "#FLG0118" (at 251.46 45.085 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "PWR_FLAG" (at 251.46 43.4142 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "" (at 251.46 46.99 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 251.46 46.99 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 690ddea1-8136-4038-94aa-fca5d7214a59))
-    (instances
-      (project "ecevr-proto"
-        (path "/53719fc4-141e-4c58-98cd-ab3bf9a4e1c0/436aa1dd-06e4-42f7-9e42-2b85da72279f"
-          (reference "#FLG0118") (unit 1)
-        )
-      )
-    )
-  )
-
   (symbol (lib_id "Device:R_Small") (at 156.21 118.11 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 3a6de771-7e4f-4a8e-9876-229e3ce529c0)
@@ -3115,8 +3084,8 @@
     (pin "97" (uuid 5ff97aa0-5f98-4721-82c9-726222914e83))
     (pin "98" (uuid 78d82f1d-ff71-4572-9c16-e6636ddd8efc))
     (pin "99" (uuid 80096c21-e964-4c09-9216-966f79fd00cf))
-    (pin "SH" (uuid e90dd1dc-8281-4cbb-ab95-d0d3dbd099d4))
-    (pin "SH" (uuid e90dd1dc-8281-4cbb-ab95-d0d3dbd099d4))
+    (pin "SH" (uuid e90dd1dc-8281-4cbb-ab95-d0d3dbd099d5))
+    (pin "SH" (uuid e90dd1dc-8281-4cbb-ab95-d0d3dbd099d5))
     (instances
       (project "ecevr-proto"
         (path "/53719fc4-141e-4c58-98cd-ab3bf9a4e1c0/436aa1dd-06e4-42f7-9e42-2b85da72279f"
@@ -3342,8 +3311,8 @@
     (pin "97" (uuid 37011691-02d5-42cf-8a88-f49147cf1840))
     (pin "98" (uuid 6dc43fac-fd07-47e9-88c7-09de9bd10b43))
     (pin "99" (uuid 63d18540-fe0e-469a-a8ae-31b78c8a3351))
-    (pin "SH" (uuid 6d5baa32-0fe8-4427-bd39-e9d47fbaa53e))
-    (pin "SH" (uuid 6d5baa32-0fe8-4427-bd39-e9d47fbaa53e))
+    (pin "SH" (uuid 6d5baa32-0fe8-4427-bd39-e9d47fbaa53f))
+    (pin "SH" (uuid 6d5baa32-0fe8-4427-bd39-e9d47fbaa53f))
     (instances
       (project "ecevr-proto"
         (path "/53719fc4-141e-4c58-98cd-ab3bf9a4e1c0/436aa1dd-06e4-42f7-9e42-2b85da72279f"
