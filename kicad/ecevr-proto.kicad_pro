@@ -93,9 +93,9 @@
         "padstack": "error",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_edge_clearance": "warning",
+        "silk_edge_clearance": "ignore",
         "silk_over_copper": "warning",
-        "silk_overlap": "warning",
+        "silk_overlap": "ignore",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
@@ -200,6 +200,10 @@
         {
           "diameter": 0.35,
           "drill": 0.2
+        },
+        {
+          "diameter": 0.4,
+          "drill": 0.3
         },
         {
           "diameter": 0.46,
@@ -410,18 +414,18 @@
       "global_label_dangling": "warning",
       "hier_label_mismatch": "error",
       "label_dangling": "error",
-      "lib_symbol_issues": "warning",
+      "lib_symbol_issues": "ignore",
       "missing_bidi_pin": "warning",
       "missing_input_pin": "warning",
       "missing_power_pin": "error",
       "missing_unit": "warning",
-      "multiple_net_names": "warning",
+      "multiple_net_names": "ignore",
       "net_not_bus_member": "warning",
       "no_connect_connected": "warning",
       "no_connect_dangling": "warning",
       "pin_not_connected": "error",
       "pin_not_driven": "error",
-      "pin_to_pin": "warning",
+      "pin_to_pin": "error",
       "power_pin_not_driven": "error",
       "similar_labels": "warning",
       "simulation_model_issue": "error",
@@ -542,60 +546,60 @@
         "pattern": "/USB, JTAG, I2C/USBD_P"
       },
       {
-        "netclass": "eurockt_diff100",
+        "netclass": "jlc_diff100",
         "pattern": "/lan9254/rj45_ports/P0_RXD_N"
       },
       {
-        "netclass": "eurockt_diff100",
+        "netclass": "jlc_diff100",
         "pattern": "/lan9254/rj45_ports/P0_RXD_P"
       },
       {
-        "netclass": "eurockt_diff100",
+        "netclass": "jlc_diff100",
         "pattern": "/lan9254/rj45_ports/P0_TXD_N"
       },
       {
-        "netclass": "eurockt_diff100",
+        "netclass": "jlc_diff100",
         "pattern": "/lan9254/rj45_ports/P0_TXD_P"
       },
       {
-        "netclass": "eurockt_diff100",
+        "netclass": "jlc_diff100",
         "pattern": "/lan9254/rj45_ports/P1_RXD_N"
       },
       {
-        "netclass": "eurockt_diff100",
+        "netclass": "jlc_diff100",
         "pattern": "/lan9254/rj45_ports/P1_RXD_P"
       },
       {
-        "netclass": "eurockt_diff100",
+        "netclass": "jlc_diff100",
         "pattern": "/lan9254/rj45_ports/P1_TXD_N"
       },
       {
-        "netclass": "eurockt_diff100",
+        "netclass": "jlc_diff100",
         "pattern": "/lan9254/rj45_ports/P1_TXD_P"
       },
       {
-        "netclass": "eurockt_diff100",
+        "netclass": "jlc_diff100",
         "pattern": "/mgt_refclk/CLK_OUT_N"
       },
       {
-        "netclass": "eurockt_diff100",
+        "netclass": "jlc_diff100",
         "pattern": "/mgt_refclk/CLK_OUT_P"
       },
       {
-        "netclass": "eurockt_diff100",
-        "pattern": "MGT_RX1_N"
+        "netclass": "jlc_diff100",
+        "pattern": "MGT_RX3_N"
       },
       {
-        "netclass": "eurockt_diff100",
-        "pattern": "MGT_RX1_P"
+        "netclass": "jlc_diff100",
+        "pattern": "MGT_RX3_P"
       },
       {
-        "netclass": "eurockt_diff100",
-        "pattern": "MGT_TX1_N"
+        "netclass": "jlc_diff100",
+        "pattern": "MGT_TX3_N"
       },
       {
-        "netclass": "eurockt_diff100",
-        "pattern": "MGT_TX1_P"
+        "netclass": "jlc_diff100",
+        "pattern": "MGT_TX3_P"
       },
       {
         "netclass": "eurockt_diff100",

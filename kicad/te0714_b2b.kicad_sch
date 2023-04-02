@@ -1179,6 +1179,7 @@
     )
   )
 
+
   (junction (at 119.38 39.37) (diameter 0) (color 0 0 0 0)
     (uuid 0ebb4ecc-34ba-4479-833b-9a9dfeb984b2)
   )
@@ -1618,6 +1619,10 @@
   (text "SPI_D0" (at 252.73 111.76 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 03a9fb07-d143-414f-abce-abc4181c222c)
+  )
+  (text "VCCIO15" (at 245.11 92.71 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid 0e4e90f4-0c48-4f54-a300-b90ba41e3d99)
   )
   (text "SPI_D1" (at 133.35 116.84 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
@@ -3218,8 +3223,8 @@
     (pin "97" (uuid 5ff97aa0-5f98-4721-82c9-726222914e83))
     (pin "98" (uuid 78d82f1d-ff71-4572-9c16-e6636ddd8efc))
     (pin "99" (uuid 80096c21-e964-4c09-9216-966f79fd00cf))
-    (pin "SH" (uuid e90dd1dc-8281-4cbb-ab95-d0d3dbd099d7))
-    (pin "SH" (uuid e90dd1dc-8281-4cbb-ab95-d0d3dbd099d7))
+    (pin "SH" (uuid e90dd1dc-8281-4cbb-ab95-d0d3dbd099d8))
+    (pin "SH" (uuid e90dd1dc-8281-4cbb-ab95-d0d3dbd099d8))
     (instances
       (project "ecevr-proto"
         (path "/53719fc4-141e-4c58-98cd-ab3bf9a4e1c0/436aa1dd-06e4-42f7-9e42-2b85da72279f"
@@ -3445,8 +3450,8 @@
     (pin "97" (uuid 37011691-02d5-42cf-8a88-f49147cf1840))
     (pin "98" (uuid 6dc43fac-fd07-47e9-88c7-09de9bd10b43))
     (pin "99" (uuid 63d18540-fe0e-469a-a8ae-31b78c8a3351))
-    (pin "SH" (uuid 6d5baa32-0fe8-4427-bd39-e9d47fbaa541))
-    (pin "SH" (uuid 6d5baa32-0fe8-4427-bd39-e9d47fbaa541))
+    (pin "SH" (uuid 6d5baa32-0fe8-4427-bd39-e9d47fbaa542))
+    (pin "SH" (uuid 6d5baa32-0fe8-4427-bd39-e9d47fbaa542))
     (instances
       (project "ecevr-proto"
         (path "/53719fc4-141e-4c58-98cd-ab3bf9a4e1c0/436aa1dd-06e4-42f7-9e42-2b85da72279f"
