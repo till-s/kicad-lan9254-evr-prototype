@@ -1,10 +1,11 @@
 I haven't found two impedance calculators (jlcpcb, kicad, eurocircuits, internet)
 which yields similar results for the same er/w/s/h/t settings :-(.
 
-jlcpcb's impedance calculator (on their 2113 substrate)
+jlcpcb's impedance calculator (on their 2113 or 3313 substrate [impedance calc. yields same width
+for 3313 as it used to for 2113)
 
- 50Ohm, single-ended : 0.147mm
- 100Ohm, differential: 5mil (0.127) spacing, 4mil width (0.102mm)
+ 50Ohm, single-ended : 5.78mil (0.147mm)
+ 100Ohm, differential: 5mil (0.127mm) spacing, 4mil width (0.102mm)
 
 eurocircuits:
  50Ohm, single-ended : 0.182mm
