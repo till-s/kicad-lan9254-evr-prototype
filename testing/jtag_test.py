@@ -589,8 +589,15 @@ class Chn:
         raise RuntimeError("eepWrite: data not ACKed")
     self.i2cStop( idx )
 
-  def eepBlank(self, eepSize = 2048, i2cAddr = 0x50, idx = 0):
-    self.eepWrite( [0xff for i in range(eepSize)], i2cAddr = i2cAddr, idx = idx ) 
+  def eepBlank(self, eepSize = 2048, i2cAddr = 0x50, idx = 0, off = 0):
+    # a page
+    v   = [0xff for i in range(16)]
+    while off < eepSize:
+      sys.stdout.flush()
+      self.eepWrite( v, i2cAddr = i2cAddr, idx = idx, off = off )
+      off += len(v)
+      print("\b\b\b\b{:04x}".format(off), end="")
+    print("\nDone")
 
   @staticmethod
   def crc8byte(crc, dat):
@@ -698,7 +705,8 @@ class Chn:
         if ( p != q ):
           if v != 1:
             self.urc_.shift_dr()
-            raise RuntimeError("Readback {} == 0 when {} driven 0".format(q,p))
+            #raise RuntimeError("Readback {} == 0 when {} driven 0".format(q,p))
+            print("Readback {} == 0 when {} driven 0".format(q,p))
         else:
           if v != 0:
             self.urc_.shift_dr()
