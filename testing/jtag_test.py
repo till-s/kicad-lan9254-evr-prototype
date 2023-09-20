@@ -3,18 +3,7 @@ import os
 from   time import sleep
 import subprocess
 import sys
-
-def getyN(prompt='y/[N]?'):
-  if prompt is None or len(prompt) == 0:
-    prompt = ''
-  else:
-    prompt = "-p \'" + prompt + "\'"
-  nl = (len(prompt) > 0)
-  rv = ( 0 == os.system("bash -c 'read -s -n1 " + prompt + " chr && [ ${chr}y = yy ]'") )
-  sys.stdout.flush()
-  if nl:
-    print('')
-  return rv
+from   JtagDevUtils import *
 
 def ecGetReg(off, w=32):
   r = subprocess.run(["ethercat", "reg_read", "-tuint{:d}".format(w), "{:d}".format(off)], stdout=subprocess.PIPE)
@@ -47,7 +36,7 @@ def ecDisableWatchdog():
 def ecEnableWatchdog():
   ecSetReg(0x420, 1000, w=16)
 
-class Chn:
+class Chn(JtagTap):
 
   PLL_CLK_PIN = 'IO_D13'
   LAN_CLK_PIN = 'IO_E13'
@@ -195,7 +184,9 @@ class Chn:
     'IO_U5',
     'IO_V6',
     'IO_U6',
-   ];
+   ]
+
+  DONE_PIN = 'DONE_F12'
 
   POFO_PINS = [
     'IO_K3',
@@ -268,68 +259,38 @@ class Chn:
   #  CBUS7: SLEEP#
   
   def __init__(self):
-    urc = urjtag.chain()
-    urc.bsdl_path("./bsdl/")
-    urc.cable("xpc_ext")
-    urc.tap_detect()
-    self.urc_ = urc
-    self.reinit()
-
-  def reinit(self):
-    self.extest()
-    self.fifoInit()
-    self.ledOff()
-
-  def extest(self):
-    self.urc_.reset()
-    self.urc_.set_instruction("EXTEST")
-    self.urc_.shift_ir()
+    super().__init__( path= "./bsdl/" )
+    self.led_    = JtagLED (
+                             self.urc,
+                             self.LED_PINS,
+                             self.DONE_PIN
+                           )
+    self.gpio_   = JtagGPIO(
+                             self.urc,
+                             dat_pins = self.GPIO_DAT_PINS,
+                             dir_pins = self.GPIO_DIR_PINS
+                           )
+    self.i2c_    = JtagI2C (
+                             self.urc,
+                             scl_pins = self.I2C_SCL_PINS,
+                             sda_pins = self.I2C_SDA_PINS
+                           )
+    self.flash_  = JtagSPIFlash(
+                             self.urc,
+                             clk_pin  = self.SPIFLASH_IO_PINS[self.SPIFLASH_CLK_IDX],
+                             mosi_pin = self.SPIFLASH_IO_PINS[self.SPIFLASH_SO_IDX ],
+                             miso_pin = self.SPIFLASH_IO_PINS[self.SPIFLASH_SI_IDX ],
+                             csb_pin  = self.SPIFLASH_IO_PINS[self.SPIFLASH_CSb_IDX]
+                           )
 
   def fifoInit(self):
     self.fifoSetDat()
-    self.urc_.set_signal( self.FIFO_PINS["WR"],  0 )
-    self.urc_.set_signal( self.FIFO_PINS["RDb"], 1 )
-    self.urc_.shift_dr()
-
-  def blinkLo(self, sig, dly = 0.2):
-    self.urc_.set_signal(sig, 0)
-    self.urc_.shift_dr()
-    sleep(dly)
-    self.urc_.set_signal(sig)
-    self.urc_.shift_dr()
-
-  def blinkHiLo(self, sig):
-    self.urc_.set_signal(sig, 1)
-    self.urc_.shift_dr()
-    sleep(0.2)
-    self.urc_.set_signal(sig, 0)
-    self.urc_.shift_dr()
-
-  def ledOff(self):
-    for s in self.LED_PINS:
-      self.urc_.set_signal(s, 0)
-    self.urc_.shift_dr()
+    self.urc.set_signal( self.FIFO_PINS["WR"],  0 )
+    self.urc.set_signal( self.FIFO_PINS["RDb"], 1 )
+    self.urc.shift_dr()
 
   def checkLeds(self):
-    failed = []
-    self.ledOff()
-    print("Checking LEDs (all except PWR should be OFF!) -- ready [press key]?")
-    getyN('')
-    for i in range(len(self.LED_PINS)):
-      self.blinkHiLo( self.LED_PINS[i] )
-      print("Did you see led {:d} ".format(i))
-      if ( not getyN() ):
-        failed.append(self.LED_PINS[i])
-    print("Now flashing notDONE LED ON -- ready [press key]?")
-    getyN('')
-    self.blinkLo( 'DONE_F12' )
-    print("Did you see it?")
-    if ( not getyN() ):
-      failed.append('DONE_F12')
-    for s in self.LED_PINS:
-      self.urc_.set_signal(s)
-    self.urc_.shift_dr()
-    return failed
+    return self.led_.test()
 
   def checkPOF(self):
     print("Checking POF Outputs -- should be 5V initially, please verify")
@@ -337,7 +298,7 @@ class Chn:
     for i in range(len(self.POFO_PINS)):
       print("Prepare measuring voltage at POF {:d} output -- ready [press key]".format(i))
       getyN('')
-      self.blinkLo( self.POFO_PINS[i], 1.0 )
+      self.led_.blinkLo( self.POFO_PINS[i], 1.0 )
       print("Did you see it?")
       if ( not getyN() ):
         failed.append( self.POFO_PINS[i] )
@@ -355,51 +316,8 @@ class Chn:
           failed.append( self.POFI_PINS[i] )
     return failed
 
-  def setGpioIn(self):
-    for s in self.GPIO_DAT_PINS:
-      self.urc_.set_signal(s)
-    self.urc_.shift_dr()
-    for s in self.GPIO_DIR_PINS:
-      self.urc_.set_signal(s)
-    self.urc_.shift_dr()
-
   def checkGPIO(self):
-    print("Checking GPIO")
-    failed = []
-    self.setGpioIn()
-    for i in range(len(self.GPIO_DIR_PINS)):
-      self.urc_.shift_dr()
-      # initially the buffer should be in IN direction
-      if ( 0 != self.urc_.get_signal(self.GPIO_DAT_PINS[i]) ):
-        print("GPIO {:d} initially not driven low -- FAILED".format(i))
-        ## user must further investigate
-        failed.append( self.GPIO_DIR_PINS[i] )
-        failed.append( self.GPIO_DAT_PINS[i] )
-      else:
-        print("Output {:d} measured to be 0V ?".format(i))
-        if not getyN():
-          failed.append( self.GPIO_DIR_PINS[i] )
-          failed.append( self.GPIO_DAT_PINS[i] )
-        else:
-          self.urc_.set_signal( self.GPIO_DIR_PINS[i], 1 )
-          self.urc_.shift_dr()
-          self.urc_.shift_dr()
-          print("Switching direction; voltage at Output {:d} now 3.3V?".format(i))
-          stat = getyN()
-          if ( stat ):
-            print("Now asserting Output {:d} low, please measure -- ready [key press] ?".format(i))
-            getyN('')
-            self.blinkLo( self.GPIO_DAT_PINS[i], 1.0 )
-            print("Did you measure 0V for a moment?")
-            stat = getyN()
-          if not stat:
-            failed.append( self.GPIO_DIR_PINS[i] )
-            failed.append( self.GPIO_DAT_PINS[i] )
-        
-          # back to input
-          self.urc_.set_signal( self.GPIO_DIR_PINS[i] )
-          self.urc_.shift_dr()
-    return failed
+    return self.gpio_.test()
 
   def checkPowerCycle(self):
     failed = []
@@ -493,112 +411,6 @@ class Chn:
       self.urc_.shift_dr()
     return failed
 
-  def i2cStart(self, idx=0):
-    self.urc_.set_signal(self.I2C_SDA_PINS[idx])
-    self.urc_.shift_dr()
-    self.urc_.set_signal(self.I2C_SCL_PINS[idx])
-    self.urc_.shift_dr()
-    self.urc_.set_signal(self.I2C_SDA_PINS[idx], 0)
-    self.urc_.shift_dr()
-    self.urc_.set_signal(self.I2C_SCL_PINS[idx], 0)
-    self.urc_.shift_dr()
-
-  def i2cStop(self, idx=0):
-    self.urc_.set_signal(self.I2C_SDA_PINS[idx], 0)
-    self.urc_.shift_dr()
-    self.urc_.set_signal(self.I2C_SCL_PINS[idx])
-    self.urc_.shift_dr()
-    self.urc_.set_signal(self.I2C_SDA_PINS[idx])
-    self.urc_.shift_dr()
-
-  def i2cShiftBit(self, bit = 1, idx = 0):
-    if ( bit != 0 ):
-      self.urc_.set_signal(self.I2C_SDA_PINS[idx])
-    else:
-      self.urc_.set_signal(self.I2C_SDA_PINS[idx], 0)
-    self.urc_.shift_dr()
-    self.urc_.set_signal(self.I2C_SCL_PINS[idx])
-    self.urc_.shift_dr()
-    self.urc_.shift_dr()
-    rv = self.urc_.get_signal(self.I2C_SDA_PINS[idx])
-    self.urc_.set_signal(self.I2C_SCL_PINS[idx], 0)
-    self.urc_.shift_dr()
-    nak = (rv != 0)
-    return nak
-
-  def i2cWriteByte(self, dat = 0xff, idx = 0):
-    # ack bit -> 1
-    dat = (dat << 1) | 1;
-    msk = 0x100;
-    while (msk != 0):
-      nak = self.i2cShiftBit( (dat & msk), idx );
-      msk >>= 1
-    return nak
-
-  def i2cReadByte(self, nak, idx = 0):
-    dat = 0
-    for i in range(8):
-      dat = dat << 1
-      if ( self.i2cShiftBit( 1, idx ) != 0 ):
-        dat |= 1
-    if nak:
-      bit = 1
-    else:
-      bit = 0
-    self.i2cShiftBit( bit, idx );
-    return dat
-
-  def i2cSendAddr(self, i2cAddr, rdNotWr, idx = 0):
-    self.i2cStart( idx )
-    i2cAddr <<= 1
-    if rdNotWr:
-      i2cAddr |= 1
-    nak = self.i2cWriteByte( i2cAddr, idx )
-    return nak
-
-  def eepSendOff(self, off, i2cAddr, idx):
-    if self.i2cSendAddr( i2cAddr | (off >> 8), self.I2C_WR, idx ) == self.I2C_NAK:
-      self.i2cStop( idx )
-      raise RuntimeError("eepSendOff: address not ACKed")
-    if self.i2cWriteByte( off & 0xff, idx ) == self.I2C_NAK:
-      self.i2cStop( idx )
-      raise RuntimeError("eepSendOff: offset not ACKed")
-    
-  def eepRead(self, nbytes, off = 0, i2cAddr = 0x50, idx = 0):
-    dat = []
-    if nbytes <= 0:
-      return dat;
-    self.eepSendOff( off, i2cAddr, idx )
-    # restart
-    if self.i2cSendAddr( i2cAddr | (off >> 8 ), self.I2C_RD, idx ) == self.I2C_NAK:
-      self.i2cStop( idx )
-      raise RuntimeError("eepRead: restart addr not ACKed")
-    for i in range(nbytes):
-      nak = (i == nbytes - 1)
-      dat.append( self.i2cReadByte( nak, idx ) )
-    self.i2cStop(idx)
-    return dat
-
-  def eepWrite(self, dat, off = 0, i2cAddr = 0x50, idx = 0):
-    if ( len(dat) < 1 ):
-      return
-    self.eepSendOff( off, i2cAddr, idx )
-    for d in dat:
-      if self.i2cWriteByte( d, idx ) == self.I2C_NAK:
-        self.i2cStop( idx )
-        raise RuntimeError("eepWrite: data not ACKed")
-    self.i2cStop( idx )
-
-  def eepBlank(self, eepSize = 2048, i2cAddr = 0x50, idx = 0, off = 0):
-    # a page
-    v   = [0xff for i in range(16)]
-    while off < eepSize:
-      sys.stdout.flush()
-      self.eepWrite( v, i2cAddr = i2cAddr, idx = idx, off = off )
-      off += len(v)
-      print("\b\b\b\b{:04x}".format(off), end="")
-    print("\nDone")
-
   @staticmethod
   def crc8byte(crc, dat):
     rem = dat ^ crc
@@ -669,11 +481,11 @@ class Chn:
 
   def burnInpImage(self):
     print("Make sure the rest of the EEPROM is blank!")
-    self.eepWrite( self.mkImage( self.DIGIO_INP_IMAGE ) )
+    self.i2c_.eepWrite( self.mkImage( self.DIGIO_INP_IMAGE ) )
 
   def burnTstImage(self):
     print("Make sure the rest of the EEPROM is blank!")
-    self.eepWrite( self.mkImage( self.DIGIO_TST_IMAGE ) )
+    self.i2c_.eepWrite( self.mkImage( self.DIGIO_TST_IMAGE ) )
 
   def lanSetAllInp(self):
     for p in self.LAN_IO_PINS:
@@ -924,7 +736,7 @@ class Chn:
     fdivVal = int(round(fdiv * 2.0**24))
     # integer part broken into two registers
     d    = [ (idiv >> 4) & 0xff, (idiv & 0xf) << 4 ]
-    self.eepWrite( d, 0x4d, self.I2C_ADDR_CLK, 1 )
+    self.i2c_.eepWrite( d, 0x4d, self.I2C_ADDR_CLK, 1 )
     # FOD3 control (take out of reset and enable)
     d    = [0x81]
     # fractional part broken into four registers
@@ -932,151 +744,13 @@ class Chn:
       d.append( (fdivVal >> (6 + 8*(2-i))) & 0xff )
     # bit 1 disables spread-spectrum
     d.append( (fdivVal & 0x3f) << 2 )
-    self.eepWrite( d, 0x41, self.I2C_ADDR_CLK, 1 )
+    self.i2c_.eepWrite( d, 0x41, self.I2C_ADDR_CLK, 1 )
     # output 3 configuration: LVDS @ 1.8V; enable
     d = [ 0x63, 0x01 ]
-    self.eepWrite( d, 0x64, self.I2C_ADDR_CLK, 1 )
+    self.i2c_.eepWrite( d, 0x64, self.I2C_ADDR_CLK, 1 )
 
-  def spiFlashCSLo(self):
-    self.urc_.set_signal( self.SPIFLASH_IO_PINS[self.SPIFLASH_CLK_IDX ], 0 )
-    self.urc_.shift_dr()
-    self.urc_.set_signal( self.SPIFLASH_IO_PINS[self.SPIFLASH_CSb_IDX ], 0 )
-    self.urc_.shift_dr()
-
-  def spiFlashCSHi(self, clk=1):
-    self.urc_.set_signal( self.SPIFLASH_IO_PINS[self.SPIFLASH_CSb_IDX ] )
-    self.urc_.shift_dr()
-    if ( clk == 0 ):
-      self.urc_.set_signal( self.SPIFLASH_IO_PINS[self.SPIFLASH_CLK_IDX ], 0 )
-    else:
-      self.urc_.set_signal( self.SPIFLASH_IO_PINS[self.SPIFLASH_CLK_IDX ] )
-    self.urc_.shift_dr()
-
-  # CSb is assumed to be low already
-  def spiFlashShift8(self, dat):
-    clkPin = self.SPIFLASH_IO_PINS[self.SPIFLASH_CLK_IDX]
-    sinPin = self.SPIFLASH_IO_PINS[self.SPIFLASH_SI_IDX ]
-    souPin = self.SPIFLASH_IO_PINS[self.SPIFLASH_SO_IDX ]
-    dou    = 0
-    for i in range(8):
-      if ( (dat & 0x80) != 0 ):
-        self.urc_.set_signal(sinPin, 1)
-      else:
-        self.urc_.set_signal(sinPin, 0)
-      self.urc_.shift_dr()
-      self.urc_.set_signal(clkPin, 1)
-      self.urc_.shift_dr()
-      dou = (dou<<1) | self.urc_.get_signal(souPin)
-      self.urc_.set_signal(clkPin, 0)
-      dat <<= 1
-    self.urc_.shift_dr()
-    return dou
-
-  def _spiShiftAddr(self, addr):
-    self.spiFlashShift8( (addr >> 16) & 0xff )
-    self.spiFlashShift8( (addr >>  8) & 0xff )
-    self.spiFlashShift8( (addr >>  0) & 0xff )
-
-  def spiFlashRead(self, addr, nBytes):
-    self.spiFlashCSLo()
-    self.spiFlashShift8(0x03)
-    self._spiShiftAddr(addr)
-    rv = []
-    for i in range(nBytes):
-      rv.append( self.spiFlashShift8( 0xff ) )
-    self.spiFlashCSHi()
-    return rv
-
-  def spiFlashWren(self):
-    self.spiFlashCSLo()
-    self.spiFlashShift8(0x06)
-    self.spiFlashCSHi()
-
-  def spiFlashVolatileWren(self):
-    self.spiFlashCSLo()
-    self.spiFlashShift8(0x50)
-    self.spiFlashCSHi()
-
-  def spiFlashReadStatus(self, reg=1):
-    if not reg in [1,2,3]:
-      raise RuntimeError("Invalid spi status register (1..3)")
-    cmd = [0x05, 0x35, 0x15]
-    self.spiFlashCSLo()
-    self.spiFlashShift8(cmd[reg-1])
-    rv = self.spiFlashShift8(0xff)
-    self.spiFlashCSHi()
-    return rv
-
-  def spiFlashSetWPS(self, val):
-    v = self.spiFlashReadStatus(3)
-    if ( val ):
-      v |= 4
-    else:
-      v &= 0xFB
-    self.spiFlashVolatileWren()
-    self.spiFlashCSLo()
-    self.spiFlashShift8(0x11)
-    self.spiFlashShift8(   v)
-    self.spiFlashCSHi()
-
-  def spiFlashEraseBlock(self, addr):
-    if ( (addr & 0xffff) != 0 ):
-      raise RuntimeError("address not erase-block-aligned (64k)")
-    self.spiFlashWren()
-    self.spiFlashCSLo()
-    self.spiFlashShift8(0xD8)
-    self._spiShiftAddr(addr)
-    self.spiFlashCSHi()
-    return self.spiFlashReadStatus()
-
-  def spiFlashEraseChip(self):
-    #self.spiFlashWren()
-    self.spiFlashCSLo()
-    self.spiFlashShift8(0xC7)
-    self.spiFlashCSHi()
-    return self.spiFlashReadStatus()
-
-
-  def spiFlashWrite(self, addr, d):
-    if ( len(d) > 255 ):
-      raise RuntimeError("Only writes < 1 page supported ATM")
-    if ( (addr & 0xff) != 0 ):
-      raise RuntimeError("address not page-aligned (512b)")
-    d = bytearray(d)
-    self.spiFlashWren()
-    self.spiFlashCSLo()
-    self.spiFlashShift8(0x02)
-    self._spiShiftAddr(addr)
-    for x in d:
-      self.spiFlashShift8(x)
-    self.spiFlashCSHi()
-     
   def checkSpiFlash(self):
-    # without CS nothing must happen
-    self.spiFlashCSHi(clk=0)
-    self.spiFlashShift8(0x9f)
-    d = 0xff
-    for i in range(3):
-      d &= self.spiFlashShift8(0xff)
-    if ( d != 0xff ):
-      self.spiFlashCSHi()
-      raise RuntimeError("SPI Flash response with CSb high not 0xff")
-    self.spiFlashCSLo()
-    # read ID
-    flashId = []
-    self.spiFlashShift8(0x9f)
-    for i in range(3):
-      flashId.append( self.spiFlashShift8(0xff) )
-    self.spiFlashCSHi()
-    d = 0xff
-    for dd in flashId:
-      d &= dd
-    if ( d == 0xff ):
-      raise RuntimeError("TEST FAILED: ID all 0xFF")
-    manId = flashId[0]
-    devId = (flashId[1]<<8) | flashId[2]
-    print("SPI Flash ID: manufacturer 0x{:02x}, 0x{:04x}".format(manId, devId))
-  
+    self.flash_.test()
 
 chn=Chn()
 fld=[]
