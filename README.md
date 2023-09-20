@@ -45,3 +45,10 @@ The board hosts the following hardware:
   - JTAG interface connected to FPGA and (optionally) the LAN9254.
     Initial configuration of the FPGA (blank configuration flash) must be
     performed via this interface.
+
+## Component Note
+
+The choice of some components on the board may seem bizarre (e.g., the different types
+of voltage-regulators). The explanation is the shortage of devices in 2022; I had
+to scramble and in some cases obtain a small amount of samples from vendors and design
+with what was available.
