@@ -261,22 +261,22 @@ class Chn(JtagTap):
   def __init__(self):
     super().__init__( path= "./bsdl/" )
     self.led_    = JtagLED (
-                             self.urc,
+                             self,
                              self.LED_PINS,
                              self.DONE_PIN
                            )
     self.gpio_   = JtagGPIO(
-                             self.urc,
+                             self,
                              dat_pins = self.GPIO_DAT_PINS,
                              dir_pins = self.GPIO_DIR_PINS
                            )
     self.i2c_    = JtagI2C (
-                             self.urc,
+                             self,
                              scl_pins = self.I2C_SCL_PINS,
                              sda_pins = self.I2C_SDA_PINS
                            )
     self.flash_  = JtagSPIFlash(
-                             self.urc,
+                             self,
                              clk_pin  = self.SPIFLASH_IO_PINS[self.SPIFLASH_CLK_IDX],
                              mosi_pin = self.SPIFLASH_IO_PINS[self.SPIFLASH_SO_IDX ],
                              miso_pin = self.SPIFLASH_IO_PINS[self.SPIFLASH_SI_IDX ],
