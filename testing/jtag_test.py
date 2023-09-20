@@ -278,8 +278,8 @@ class Chn(JtagTap):
     self.flash_  = JtagSPIFlash(
                              self,
                              clk_pin  = self.SPIFLASH_IO_PINS[self.SPIFLASH_CLK_IDX],
-                             mosi_pin = self.SPIFLASH_IO_PINS[self.SPIFLASH_SO_IDX ],
-                             miso_pin = self.SPIFLASH_IO_PINS[self.SPIFLASH_SI_IDX ],
+                             mosi_pin = self.SPIFLASH_IO_PINS[self.SPIFLASH_SI_IDX ],
+                             miso_pin = self.SPIFLASH_IO_PINS[self.SPIFLASH_SO_IDX ],
                              csb_pin  = self.SPIFLASH_IO_PINS[self.SPIFLASH_CSb_IDX]
                            )
 
